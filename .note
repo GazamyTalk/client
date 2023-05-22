@@ -1,0 +1,2 @@
+1. RTK 쓰자.
+2. RTK 쓰면 container랑 component 구별도 필요. 전역의 container는 전역에서 쓸거고, 특정 페이지에서만 쓸껀 그냥 거기에 FriendListContainer 이렇게.
