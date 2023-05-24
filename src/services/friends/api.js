@@ -30,6 +30,13 @@ const api = createApi({
             }
         },
         invalidatesTags: (result, error, arg) => [{ type: "mainApi", id: "friends" }]
+    }),
+
+    getAccount: builder.query({
+      query: () => 'my/account',
+      providesTags: (result, error, arg) => {
+        return [{ type: "mainApi", id: "account" }]
+      }
     })
   })
 });
