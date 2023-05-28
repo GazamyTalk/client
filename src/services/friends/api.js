@@ -1,14 +1,14 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const api = createApi({
-  reducerPath: "mainApi",
+  reducerPath: "friendApi",
   baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_SERVER_URL}/api` }),
-  tagTypes: ["mainApi"],
+  tagTypes: ["friends"],
   endpoints: (builder) => ({
     getFriends: builder.query({
       query: () => `my/friends`,
       providesTags: (result, error, arg) => {
-        return [{ type: "mainApi", id: "friends" }];
+        return [{ type: "friends" }];
       }
     }),
     addFriend: builder.mutation({
@@ -19,7 +19,7 @@ const api = createApi({
           body: { username }
         };
       },
-      invalidatesTags: (result, error, arg) => [{ type: "mainApi", id: "friends" }]
+      invalidatesTags: (result, error, arg) => [{ type: "friends" }]
     }),
     delFriend: builder.mutation({
         query: ({ username }) => {
@@ -29,15 +29,8 @@ const api = createApi({
                 body: { username }
             }
         },
-        invalidatesTags: (result, error, arg) => [{ type: "mainApi", id: "friends" }]
+        invalidatesTags: (result, error, arg) => [{ type: "friends" }]
     }),
-
-    getAccount: builder.query({
-      query: () => 'my/account',
-      providesTags: (result, error, arg) => {
-        return [{ type: "mainApi", id: "account" }]
-      }
-    })
   })
 });
 
