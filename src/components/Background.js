@@ -1,6 +1,4 @@
 import styled from "styled-components";
-
-// import WaveImg from "./WaveImg";
 import waveImage from "../assets/images/wave.png";
 
 
@@ -11,6 +9,7 @@ const StyledBody = styled.div`
   margin: 0;
   padding: 0;
   background-image: url(${props => waveImage});
+  background-size: cover;
 `;
 
 
