@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import Background from "../../components/Background.js";
 import gazamy from "../../assets/images/gazamy.png";
 import home from "../../assets/images/home.png";
 import AddButton from "../../components/AddButton.js";
 import FriendNavContainer from "../Home/FriendsBarContainer.js";
 import FriendsBar from "../Home/FriendsBar.js";
+import Message from "./message.js";
 
 const HomeLogo = styled.div`
   background-image: url(${home});
@@ -73,12 +75,23 @@ const Text = styled.div`
   flex-direction: column;
 `;
 
-const ChatInput = styled.input`
+const ChatInput = styled.div`
   background: white;
   width: 100%;
   height: 50px;
-  // padding: 10px;
+  padding: 10px;
   fonts-size: 15px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Input = styled.input`
+  background: white;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  fonts-size: 20px;
   border: none;
 `;
 
@@ -106,12 +119,18 @@ const Context = styled.div`
   font-size: 20px;
 `;
 
+const Space = styled.div`
+  width: 10px;
+  height: 10px;
+
+`;
+
 function Chat(props) {
   return (
     <Background>
       <Wrapper>
         <LeftNavBar>
-          <HomeLogo/> 
+         <Link to="/"><HomeLogo/></Link>
         </LeftNavBar>
         
         <Chatting>
@@ -120,15 +139,22 @@ function Chat(props) {
             <Text>
               <RoomTitle>그냥 노는 방</RoomTitle>
               <RoomSubTitle>응애 놀자</RoomSubTitle>
-
             </Text>
           </RoomInfo>
+
           <ChatContent>
             <Context>
+              <Message ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
               
             </Context>
           </ChatContent>
-          <ChatInput></ChatInput>
+
+          <ChatInput>
+            <Input></Input>
+            <AddButton desc={"Send"} height={"50px"} width={"120px"} onClick={props.sendMessage}></AddButton>
+            <Space></Space>
+          </ChatInput>
         </Chatting>
         
         <FriendNavContainer></FriendNavContainer>

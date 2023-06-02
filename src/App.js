@@ -2,7 +2,8 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import HomePage from "./pages/Home";
 import Chat from "./pages/Chat";
-import Register from "./pages/Register"
+import Register from "./pages/Register";
+import AddFriend from "./pages/AddFriend";
 import Login from "./pages/Login"
 import "./App.css";
 // import api from "./services/friends/api";
@@ -34,6 +35,7 @@ function App() {
       <Route path="/chat" element={<Chat></Chat>}></Route>
       <Route path="/register" element={<Register></Register>}></Route>
       <Route path="/login" element={<Login></Login>}></Route>
+      <Route path="/addFriend" element={<AddFriend></AddFriend>}></Route>
     </Routes>
   </BrowserRouter>
 }

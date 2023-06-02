@@ -9,6 +9,7 @@ const AddButtonArea = styled.div`
   margin: 10px;
   // width: 100%;
   height: ${props => props.height};
+  width: ${props => props.width};
   background: #b6f4ff;
   border-radius: 10px;
   &:hover {
@@ -41,7 +42,7 @@ const Description = styled.div`
 
 export default function AddButton(props) {
   return (
-    <AddButtonArea height={props.height} onClick={props.onClick}>
+    <AddButtonArea height={props.height} width={props.width} onClick={props.onClick}>
       <StyledAddImg src={addImage}></StyledAddImg>
       <Description>{props.desc}</Description>
     </AddButtonArea>
