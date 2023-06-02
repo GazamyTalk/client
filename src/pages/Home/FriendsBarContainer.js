@@ -5,7 +5,7 @@ import FriendsBar from "./FriendsBar";
 
 
 
-export default function FriendNavContainer({}) {
+export default function FriendNavContainer() {
   // const query = api.useGetFriendsQuery();
   // const [addFriend, mutationState] = api.useAddFriendMutation();
   // if ( query.isLoading ) return <></>
