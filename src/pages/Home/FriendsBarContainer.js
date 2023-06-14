@@ -1,5 +1,3 @@
-import styled from "styled-components";
-import AddButton from "../../components/AddButton";
 import FriendsBar from "./FriendsBar";
 // import api from "../../features/mainApi/api";
 

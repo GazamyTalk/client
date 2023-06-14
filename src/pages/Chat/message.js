@@ -4,15 +4,16 @@ import ReplacedImg from "../../assets/images/gazamy.png";
 const TextArea = styled.div `
     font-size: 30px;
     margin: 10px;
-    background: red;
     display: flex;
     width: 100%;
 `;
 
 const ChatContent = styled.div`
     font-size: 20px;
-    font-weight: 900;
-    padding: 10px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    height:100%;
 `;
 
 const UserImg = styled.div`

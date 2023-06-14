@@ -59,9 +59,6 @@ const HighLight = styled.div`
   font-size: inherit;
 `;
 
-
-//로고 및 로그인 설명
-
 const MainAreaDiv = styled.div`
   background: white;
   width: 30%;
@@ -70,7 +67,7 @@ const MainAreaDiv = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  border-radius: 3px;
+  border-radius: 10px;
   box-shadow: 0px 10px 10px 1px black;
 `;
 
@@ -107,7 +104,7 @@ function Register(props) {
           </OuterAreaDiv>
 
           <AddButton
-              desc={"submit"} width={"170px"} height={"50px"} Btnimg={""}
+              desc={"submit"} width={"170px"} height={"50px"} image={"none"} color={"#b6f4ff"}
             ></AddButton>
 
         </MainAreaDiv>

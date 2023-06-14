@@ -5,8 +5,8 @@ import gazamy from "../../assets/images/gazamy.png";
 import home from "../../assets/images/home.png";
 import AddButton from "../../components/AddButton.js";
 import FriendNavContainer from "../Home/FriendsBarContainer.js";
-import FriendsBar from "../Home/FriendsBar.js";
 import Message from "./message.js";
+import sendImage from "../../assets/images/send.png";
 
 const HomeLogo = styled.div`
   background-image: url(${home});
@@ -17,7 +17,6 @@ const HomeLogo = styled.div`
   background-repeat:no-repeat;
   margin-top: 60px;
 `;
-
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,14 +30,6 @@ const LeftNavBar = styled.div`
   width: 70px;
   display: flex;
   justify-content: center;
-`;
-
-const RightNavBar = styled.div`
-  background: #7AE2F2;
-  height: 100vh;
-  width: 300px;
-  display: flex;
-  justify-content: space-between;
 `;
 
 const Chatting = styled.div`
@@ -76,21 +67,24 @@ const Text = styled.div`
 `;
 
 const ChatInput = styled.div`
-  background: white;
-  width: 100%;
+  background: transparent;
   height: 50px;
   padding: 10px;
   fonts-size: 15px;
   border: none;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position:relative;
+  bottom: 15px;
 `;
 
 const Input = styled.input`
   background: white;
-  width: 100%;
+  width: 90%;
   height: 50px;
   padding: 10px;
+  margin-left: 30px;
   fonts-size: 20px;
   border: none;
 `;
@@ -102,7 +96,6 @@ const RoomTitle = styled.div`
   font-weight: 900;
   padding: 10px;
 `;
-
 
 const RoomSubTitle = styled.div`
   border-radius: 10px;
@@ -152,7 +145,7 @@ function Chat(props) {
 
           <ChatInput>
             <Input></Input>
-            <AddButton desc={"Send"} height={"50px"} width={"120px"} onClick={props.sendMessage}></AddButton>
+            <AddButton desc={""} height={"50px"} width={"100px"} onClick={props.sendMessage} image={sendImage} color={"white"}></AddButton>
             <Space></Space>
           </ChatInput>
         </Chatting>

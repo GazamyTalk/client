@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Background from "../../components/Background.js";
 import AddButton from "../../components/AddButton.js";
 import { Link } from "react-router-dom";
-import visible from "../../assets/images/visible.png"
+
 const Container = styled.div`
   display: flex;
   height: 100vh;
@@ -104,7 +104,7 @@ function Register(props) {
           </OuterAreaDiv>
 
           <AddButton
-              desc={"Login"} width={"170px"} height={"50px"} Btnimg={""}
+              desc={"Login"} width={"170px"} height={"50px"} Btnimg={""} color={"#b6f4ff"}
             ></AddButton>
 
         </MainAreaDiv>

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import addImage from "../assets/images/addImage.png";
 
 const AddButtonArea = styled.div`
   transition: 0.3s;
@@ -7,10 +6,11 @@ const AddButtonArea = styled.div`
   align-items: center;
   justify-content: center;
   margin: 10px;
+  padding:0px 25px 0px 0px;
   // width: 100%;
   height: ${props => props.height};
   width: ${props => props.width};
-  background: #b6f4ff;
+  background: ${props => props.color};
   border-radius: 10px;
   &:hover {
     transition: 0.3s;
@@ -22,12 +22,13 @@ const AddButtonArea = styled.div`
 `;
 
 const StyledAddImg = styled.img`
-  // position: relative;
-  // left: 0;
-  // width: 60px;
-  // height: 72px;
-  // padding: 3px;
+  display: flex;
+  justify-content: center;
   margin: 20px 10px 20px 20px;
+  background-image: ${props => (props.image === "none" ? "" : `url(${props.image})`)};
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
 `;
 
 const Description = styled.div`
@@ -38,12 +39,10 @@ const Description = styled.div`
   color: black;
 `;
 
-
-
 export default function AddButton(props) {
   return (
-    <AddButtonArea height={props.height} width={props.width} onClick={props.onClick}>
-      <StyledAddImg src={addImage}></StyledAddImg>
+    <AddButtonArea height={props.height} width={props.width} onClick={props.onClick} color={props.color}>
+      <StyledAddImg src={props.image}></StyledAddImg>
       <Description>{props.desc}</Description>
     </AddButtonArea>
   );
