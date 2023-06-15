@@ -5,7 +5,8 @@ const FriendsNav = styled.nav`
     margin-top: 10px;
     // flex: 1;
     // overflow: hidden;
-`
+`;
+
 
 export default function Friends(props) {
     return (
@@ -20,6 +21,7 @@ export default function Friends(props) {
                         key={friend.username}
                     ></FriendForm>
                 )
+                
             }
         </FriendsNav>
     );

@@ -1,15 +1,15 @@
 import styled from "styled-components";
+import chat from "../../assets/images/messages.png"
 
 const Friend = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  margin: 10px;
   --parent-height: ${props => props.height};
   height: var(--parent-height);
   border-radius: 5px;
   transition: 0.3s;
-  // box-shadow: 0px 0px 20px 1px rgba(61, 61, 75, 0.2);
   margin-right: 20px;
 
   &:hover {
@@ -46,14 +46,24 @@ const FriendImg = styled.img`
   margin-left: 15px;
 `;
 
+const Chatimg = styled.div`
+    width: 40px;
+    height: 40px;
+    background-image: url(${chat});
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+`;
+
 export default function FriendForm({ name, desc, img, height }){
   return (
-    <Friend height={height}>
-      <FriendImg src={img}></FriendImg>
-      <FriendDetail>
-        <FriendName>{name}</FriendName>
-        <FriendDescription>{desc}</FriendDescription>
-      </FriendDetail>
-    </Friend>
+      <Friend height={height}>
+        <FriendImg src={img}></FriendImg>
+        <FriendDetail>
+          <FriendName>{name}</FriendName>
+          <FriendDescription>{desc}</FriendDescription>
+        </FriendDetail>
+        <Chatimg></Chatimg>
+      </Friend>
+
   );
 }

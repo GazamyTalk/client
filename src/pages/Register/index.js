@@ -16,6 +16,7 @@ const Dialogue = styled.div`
   padding: 5px;
   height: 20px;
   border-radius: 10px 10px 10px 0px;
+  font-weight: 900;
 `;
 
 const UserId = styled.input`
@@ -59,7 +60,7 @@ const HighLight = styled.span`
 const MainAreaDiv = styled.div`
   background: white;
   width: 30%;
-  height: 70%;
+  height: 60%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -92,16 +93,16 @@ function Register(props) {
         <MainAreaDiv>
           <Title>Sign in</Title>
           <OuterAreaDiv>
-            <Dialogue>ID ( 3 ~ 5 letters ) <HighLight>*</HighLight></Dialogue>
+            <Dialogue>ID ( 3 to 5 letters ) <HighLight>*</HighLight></Dialogue>
             <UserId placeholder="ID"></UserId>
-            <Dialogue>PW ( 8 ~ 15 letters ) <HighLight>*</HighLight></Dialogue>
+            <Dialogue>PW ( 8 to 15 letters ) <HighLight>*</HighLight></Dialogue>
             <UserPw placeholder="Password"></UserPw>
             <Dialogue>Nickname <HighLight>*</HighLight></Dialogue>
             <Nickname placeholder="Nickname"></Nickname>
           </OuterAreaDiv>
 
           <JustButton
-              desc={"submit"} width={"170px"} height={"50px"} image={"none"} color={"#b6f4ff"}
+              desc={"submit"} width={"200px"} height={"50px"} image={"none"} color={"#b6f4ff"}
             ></JustButton>
 
         </MainAreaDiv>

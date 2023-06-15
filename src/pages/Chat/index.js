@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import Background from "../../components/Background.js";
 import gazamy from "../../assets/images/gazamy.png";
 import home from "../../assets/images/home.png";
-import AddButton from "../../components/AddButton.js";
-import FriendNavContainer from "../Home/FriendsBarContainer.js";
+import JustImg from "../../components/JustImg.js";
+import ChatInfoNav from "../../components/ChatInfoNav.js";
 import Message from "./message.js";
 import sendImage from "../../assets/images/send.png";
+import user from "../../assets/images/peopleNum.png"
+
 
 const HomeLogo = styled.div`
   background-image: url(${home});
@@ -15,7 +17,7 @@ const HomeLogo = styled.div`
   height: 40px;
   object-fit: cover;
   background-repeat:no-repeat;
-  margin-top: 60px;
+  margin-top: 30px;
 `;
 
 const Wrapper = styled.div`
@@ -42,7 +44,6 @@ const Chatting = styled.div`
 
 const RoomInfo = styled.div`
 height: 140px;
-border-bottom: 1px solid black;
 display: flex;
 align-items: center;
 `;
@@ -63,7 +64,10 @@ const ChatContent = styled.div`
 
 const Text = styled.div`
   display: flex;
+  width: 100%;
+  height: 60%;
   flex-direction: column;
+  margin-left: 10px;
 `;
 
 const ChatInput = styled.div`
@@ -82,7 +86,7 @@ const ChatInput = styled.div`
 const Input = styled.input`
   background: white;
   width: 90%;
-  height: 50px;
+  height:45px;
   padding: 10px;
   margin-left: 30px;
   fonts-size: 20px;
@@ -91,10 +95,8 @@ const Input = styled.input`
 
 const RoomTitle = styled.div`
   border-radius: 10px;
-  margin: 20px;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 900;
-  padding: 10px;
 `;
 
 const RoomSubTitle = styled.div`
@@ -102,8 +104,6 @@ const RoomSubTitle = styled.div`
   margin: 1px;
   font-size: 15px;
   font-weight: 900;
-  padding: 10px;
-  margin-left: 20px;
   margin-bottom: 20px;
 `;
 
@@ -118,12 +118,24 @@ const Space = styled.div`
 
 `;
 
+const User = styled.img`
+ width: 25px;
+ height: 25px;
+`;
+
+const UserCnt = styled.span`
+display: flex;
+align-items: center;
+  font-size:20px;
+  font-weight:900;
+`;
+
 function Chat(props) {
   return (
     <Background>
       <Wrapper>
         <LeftNavBar>
-         <Link to="/"><HomeLogo/></Link>
+          <Link to="/"><HomeLogo/></Link>
         </LeftNavBar>
         
         <Chatting>
@@ -131,7 +143,9 @@ function Chat(props) {
             <ChatLogo/>
             <Text>
               <RoomTitle>그냥 노는 방</RoomTitle>
-              <RoomSubTitle>응애 놀자</RoomSubTitle>
+               <UserCnt> <User src={user}></User>3</UserCnt>
+                {/* <UserCnt> <User src={user}></User>{props.userCnt}}</UserCnt>              이게 적용할거 */}
+                <RoomSubTitle>응애 놀자</RoomSubTitle>
             </Text>
           </RoomInfo>
 
@@ -139,18 +153,20 @@ function Chat(props) {
             <Context>
               <Message ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
               <Message ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
-              
+              <Message ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
             </Context>
           </ChatContent>
 
           <ChatInput>
-            <Input></Input>
-            <AddButton desc={""} height={"50px"} width={"100px"} onClick={props.sendMessage} image={sendImage} color={"white"}></AddButton>
+            <Input placeholder="보낼 메세지를 적어주세요"></Input>
+            <JustImg height={"65px"} width={"75px"} onClick={props.sendMessage} image={sendImage} color={"white"}></JustImg>
             <Space></Space>
           </ChatInput>
         </Chatting>
         
-        <FriendNavContainer></FriendNavContainer>
+        <ChatInfoNav></ChatInfoNav>
       </Wrapper>
     </Background>
   );

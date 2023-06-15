@@ -1,19 +1,19 @@
 import styled from "styled-components";
 import Background from "../../components/Background.js";
-import AddButton from "../../components/AddButton.js";
+import JustButton from "../../components/justButton.js";
 import home from "../../assets/images/home.png";
 import FriendNavContainer from "../Home/FriendsBarContainer.js";
-import ProfileHandler from "./profileHandler.js"
+import ProfileHandler from "./profileHandler.js";
+import { Link } from "react-router-dom";
 
-import prof1 from "../../assets/images/profile1.png"
-import prof2 from "../../assets/images/profile2.png"
-import prof3 from "../../assets/images/profile3.png"
-import prof4 from "../../assets/images/profile4.png"
-import prof5 from "../../assets/images/profile5.png"
-import prof6 from "../../assets/images/profile6.png"
-import prof7 from "../../assets/images/profile.png"
-import prof8 from "../../assets/images/profile7.png"
-
+import prof1 from "../../assets/images/profile1.png";
+import prof2 from "../../assets/images/profile2.png";
+import prof3 from "../../assets/images/profile3.png";
+import prof4 from "../../assets/images/profile4.png";
+import prof5 from "../../assets/images/profile5.png";
+import prof6 from "../../assets/images/profile6.png";
+import prof7 from "../../assets/images/profile.png";
+import prof8 from "../../assets/images/profile7.png";
 
 const Container = styled.div`
   width: 100%;
@@ -22,57 +22,33 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Form = styled.div`
-  display: flex;
-  height: 100%;
-  width: 50%;
-  align-items: center;
-  flex: 1;
-  justify-content: center;
-`;
-
 const FormBackground = styled.div`
   display: flex;
   background: white;
-  width: 700px;
-  height: 80vh;
   flex-direction: column;
-  border-radius: 40px;
   box-shadow: 0px 4px 10px rgba(78, 108, 124, 0.25);
   border-radius: 0px 0px 15px 15px;
-  position:absolute ;
   justify-content: center;
   align-items: center;
+  flex: 1;
 `;
 
 const BlueForm = styled.div`
   display: flex;
-  background: #7AE2F2;
+  background: #7ae2f2;
   width: 700px;
-  height: 10vh;
-  flex-direction: column;
-  border-radius: 40px;
+  height: 70px;
   border-radius: 15px 15px 0px 0px;
-  justify-content: center;
   align-items: center;
-  position:absolute ;
-  top:3%;
-`;
-
-const Text = styled.div`
-  font-size: 30px;
-  font-weight: 900;
-  text-align: center;
 `;
 
 const Input = styled.input`
   background: white;
   border: none;
   border-bottom: 1px solid gray;
-  padding: 10px;
   margin: 30px 0px 30px 0px;
-  font-size: 20px;
-  width: 600px;
+  font-size: 15px;
+  width: 100%;
   height: 30px;
   background: white;
   color: gray;
@@ -81,74 +57,123 @@ const Input = styled.input`
   }
 `;
 
-const Homeicon = styled.div`
+const Homeicon = styled(Link)`
   background-image: url(${home});
   background-size: 40px 40px;
   background-repeat: no-repeat;
-  width: 300px;
-  height: 300px;
-  top:4%;
-  left:41%;
-  z-index:1;
-  position:absolute;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  margin-left: 20px;
 `;
 
 const BlockText = styled.div`
   background: #b6f4ff;
-  width: 200px;
+  width: 150px;
   border-radius: 5px;
   font-size: 20px;
   padding: 10px;
   font-weight: 900;
   text-align: center;
-`
+  text-align: center;
+`;
+
+const Text = styled.div`
+  font-size: 30px;
+  font-weight: 900;
+  margin: 20px;
+`;
 
 const ImageContainer = styled.div`
-  background: white;  
-  width: 70%;
+  background: white;
+  width:420px;
+  height:250px;
   border: 5px solid gray;
   border-radius: 10px;
+  margin: 10px;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+`;
 
-`
+const InputForm = styled.div`
+margin-top: 20px;
+  width: 420px;
+  height: 100%;
+`;
+
+const ButtonContainer = styled.div`
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+`;
+
+const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  height: 80vh;
+  align-item: center;
+  justify-content: center;
+`;
+
+const FormContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+`;
+
+const TextWrapper = styled.div`
+  width: 470px;
+`;
 
 function AddFriend() {
   return (
     <Background>
       <Container>
         <FriendNavContainer></FriendNavContainer>
-        <Form>
-          <BlueForm>
-          </BlueForm>
-          <Homeicon></Homeicon>
-          <FormBackground>
-            <Text>프로필 사진 선택</Text>
+        <FormContainer>
+          <FormWrapper>
+            <BlueForm>
+              <Homeicon to="/"></Homeicon>
+            </BlueForm>
+            <FormBackground>
+              <TextWrapper>
+                <Text>프로필 사진 선택</Text>
+              </TextWrapper>
+                <ImageContainer>
+                  <ProfileHandler image={prof1}></ProfileHandler>
+                  <ProfileHandler image={prof2}></ProfileHandler>
+                  <ProfileHandler image={prof3}></ProfileHandler>
+                  <ProfileHandler image={prof4}></ProfileHandler>
+                  <ProfileHandler image={prof5}></ProfileHandler>
+                  <ProfileHandler image={prof6}></ProfileHandler>
+                  <ProfileHandler image={prof7}></ProfileHandler>
+                  <ProfileHandler image={prof8}></ProfileHandler>
+                </ImageContainer>
 
-            <ImageContainer>
-              <ProfileHandler image={prof1}></ProfileHandler>
-              <ProfileHandler image={prof2}></ProfileHandler>
-              <ProfileHandler image={prof3}></ProfileHandler>
-              <ProfileHandler image={prof4}></ProfileHandler>
-              <ProfileHandler image={prof5}></ProfileHandler>
-              <ProfileHandler image={prof6}></ProfileHandler>
-              <ProfileHandler image={prof7}></ProfileHandler>
-              <ProfileHandler image={prof8}></ProfileHandler>
-            </ImageContainer>
-            <BlockText>새 닉네임</BlockText>
-            <Input placeholder="새 닉네임을 입력하세요 (0/20)"></Input>
-            <BlockText>새 상태 메세지</BlockText>
-            <Input placeholder="새 상태메세지를 입력하세요 (0/60)"></Input>
-            
-            <AddButton
-              desc={"Submit"}
-              width={"210px"}
-              height={"65px"}
-              image={"none"}
-              color={"#b6f4ff"}
-            >
-            </AddButton>
-          </FormBackground>
-        </Form>
+                <InputForm>
+                  <BlockText>닉네임</BlockText>
+                  <Input placeholder="새 닉네임을 입력하세요 (0/20)"></Input>
+                  <BlockText>상태메세지</BlockText>
+                  <Input placeholder="새 상태메세지를 입력하세요 (0/60)"></Input>
+                </InputForm>
+                <ButtonContainer>
+                  <JustButton
+                    desc="Submit"
+                    width={"150px"}
+                    height={"50px"}
+                    color={"#82E8FF"}
+                  ></JustButton>
+                </ButtonContainer>
+
+            </FormBackground>
+          </FormWrapper>
+        </FormContainer>
       </Container>
     </Background>
   );
