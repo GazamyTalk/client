@@ -40,10 +40,15 @@ const LogoImg1 = styled.div`
   background-repeat: no-repeat;
   width: 300px;
   height: 300px;
+<<<<<<< HEAD
   left: 35%;
   top: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
+=======
+  left: 590px;
+  position:absolute;
+>>>>>>> 4e5eb090ae17c06005984030df6926746875a6c7
 `;
 
 const LogoImg2 = styled.div`
@@ -52,10 +57,16 @@ const LogoImg2 = styled.div`
   background-repeat: no-repeat;
   width: 300px;
   height: 300px;
+<<<<<<< HEAD
   right: 35%;
   top: 50%;
   position: fixed;
   transform: translate(50%, -50%) scaleX(-1);
+=======
+  transform: scaleX(-1);
+  right: 590px;
+  position:absolute;
+>>>>>>> 4e5eb090ae17c06005984030df6926746875a6c7
 `;
 
 export default function LoadingPage() {
