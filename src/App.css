@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #DDF9FF80;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* body .bgImg{
+    height: 100vh;
+    width: 100vw;
+}
+
+nav{
+    background-color:#7AE2F2;
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav .friend .detail .name{
+    font-weight: 900;
+}
+
+nav .friend .detail{
+    display: flex;
+    flex-direction:column;
+}
+
+nav .friend{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 30px;
+    width: 230px;
+    height: 80px;
+    border-radius: 3px;
+    transition: 0.3s;
+    box-shadow: 0px 0px 20px 1px rgba(61, 61, 75, 0.2);
+    padding: 10px;
+}
+
+nav .friend:hover{
+    transition: 0.3s;
+    transform: translateX(10px);
+    box-shadow: 0px 10px 20px 10px rgba(24, 24, 31, 0.2);
+}
+
+nav .friend img{
+    width: 90px;
+    height: 85px;
+}
+
+nav .addFriend img{
+    position: relative;
+    left: 0;
+    width: 90px;
+    height: 90px;
+}
+
+nav .addFriend{
+    transition: 0.3s;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 281px;
+    height: 90px;
+    left: 10px;
+    bottom: 10px;
+    background: #B6F4FF;
+    border-radius: 10px;
+}
+
+nav .addFriend:hover{
+    transition: 0.3s;
+    background: rgb(238, 252, 255);
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 20px 1px rgba(61, 61, 75, 0.2);
+}
+
+.container .box{
+    position: absolute;
+    width: 540px;
+    height: 780px;
+    left: 480px;
+    top: 150px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.container .friendList{
+    position: absolute;
+    width: 720px;
+    height: 420px;
+    left: 1050px;
+    top: 150px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .etc{
+    position: absolute;
+    width: 720px;
+    height: 330px;
+    left: 1050px;
+    top: 600px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.container .friendList .friend{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    height: 90px;
+    transition: 0.3s;
+}
+
+.container .friendList .friend img{
+    height: 95px;
+}
+
+.container .friendList .friend:hover{
+    transition: 0.3s;
+    box-shadow: 0px 0px 20px 1px rgba(61, 61, 75, 0.2);
+}
+
+.container .friendList .friend .notification{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right: 30px;
+    top: 40px;
+    transition: 0.3s;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.container .friendList .friend .notification:hover{
+    transition: 0.3s;
+    box-shadow: 0px 0px 20px 1px rgba(61, 61, 75, 0.2);
+    border-radius: 50%; 
+} */
