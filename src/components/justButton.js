@@ -6,7 +6,6 @@ const AddButtonArea = styled.div`
   align-items: center;
   justify-content: center;
   margin: 10px;
-  padding:0px 25px 0px 0px;
   // width: 100%;
   height: ${props => props.height};
   width: ${props => props.width};
@@ -21,16 +20,6 @@ const AddButtonArea = styled.div`
   }
 `;
 
-const StyledAddImg = styled.img`
-  display: flex;
-  justify-content: center;
-  margin: 20px 10px 20px 20px;
-  background-image: url(${props => (props.image === "none" ? "" : `url(${props.image})`)});
-  background-size: 40px 40px;
-  width: 40px;
-  height: 40px;
-`;
-
 const Description = styled.div`
   color: ivory;
   text-decoration: none;
@@ -39,10 +28,9 @@ const Description = styled.div`
   color: black;
 `;
 
-export default function AddButton(props) {
+export default function justButton(props) {
   return (
     <AddButtonArea height={props.height} width={props.width} onClick={props.onClick} color={props.color}>
-      <StyledAddImg src={props.image}></StyledAddImg>
       <Description>{props.desc}</Description>
     </AddButtonArea>
   );

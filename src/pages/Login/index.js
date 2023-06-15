@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Background from "../../components/Background.js";
-import AddButton from "../../components/AddButton.js";
+import JustButton from "../../components/justButton.js";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -20,9 +20,8 @@ const Dialogue = styled.div`
 `;
 
 const UserId = styled.input`
-  margin: 20px;
+margin: 0 20px 20px 20px;
   padding: 5px;
-  margin-left: 30px;
   width: 100%;
   background: #E5F9FF;
   height 35px;
@@ -32,9 +31,9 @@ const UserId = styled.input`
 `;
 
 const UserPw = styled.input`
-  margin: 20px;
+margin: 0 20px 20px 20px;
   padding: 5px;
-  margin-left: 30px;
+  
   width: 100%;
   background: #E5F9FF;
   height 35px;
@@ -43,7 +42,7 @@ const UserPw = styled.input`
   border-radius: 5px;
 `;
 
-const HighLight = styled.div`
+const HighLight = styled.span`
   color: red;
   font-size: inherit;
 `;
@@ -63,10 +62,10 @@ const MainAreaDiv = styled.div`
 `;
 
 const OuterAreaDiv = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
 `;
 
 const Title = styled.div`
@@ -80,11 +79,11 @@ const Title = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-  color: #2E8EFF;
+  color: #2e8eff;
   font-size: 16px;
   font-weight: 900;
   text-decoration: none;
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 `;
@@ -96,17 +95,26 @@ function Register(props) {
         <MainAreaDiv>
           <Title>User Login</Title>
           <OuterAreaDiv>
-            <Dialogue>ID ( 3~5 letters )<HighLight>*</HighLight></Dialogue>
+            <Dialogue>
+              ID ( 3 ~ 5 letters ) <HighLight>*</HighLight>
+            </Dialogue>
             <UserId placeholder="ID"></UserId>
-            <Dialogue>PW ( 8~ 15 letters)<HighLight>*</HighLight></Dialogue>
+            <Dialogue>
+              PW ( 8 ~ 15 letters ) <HighLight>*</HighLight>
+            </Dialogue>
             <UserPw placeholder="Password"></UserPw>
-            <StyledLink to={"/register"}>Don't have account yet? sign in here.</StyledLink>
+            <StyledLink to={"/register"}>
+              Don't have account yet? sign in here.
+            </StyledLink>
           </OuterAreaDiv>
 
-          <AddButton
-              desc={"Login"} width={"170px"} height={"50px"} Btnimg={""} color={"#b6f4ff"}
-            ></AddButton>
-
+          <JustButton
+            desc={"Login"}
+            width={"170px"}
+            height={"50px"}
+            Btnimg={""}
+            color={"#b6f4ff"}
+          ></JustButton>
         </MainAreaDiv>
       </Container>
     </Background>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Background from "../../components/Background.js";
-import AddButton from "../../components/AddButton.js";
+import JustButton from "../../components/justButton.js";
 
 const Container = styled.div`
   display: flex;
@@ -19,9 +19,8 @@ const Dialogue = styled.div`
 `;
 
 const UserId = styled.input`
-  margin: 20px;
+  margin: 0 20px 20px 20px;
   padding: 5px;
-  margin-left: 30px;
   width: 100%;
   background: #E5F9FF;
   height 35px;
@@ -31,9 +30,8 @@ const UserId = styled.input`
 `;
 
 const UserPw = styled.input`
-  margin: 20px;
   padding: 5px;
-  margin-left: 30px;
+  margin: 0 20px 20px 20px;
   width: 100%;
   background: #E5F9FF;
   height 35px;
@@ -43,9 +41,8 @@ const UserPw = styled.input`
 `;
 
 const Nickname = styled.input`
-  margin: 20px;
+margin: 0 20px 20px 20px;
   padding: 5px;
-  margin-left: 30px;
   width: 100%;
   background: #E5F9FF;
   height 35px;
@@ -54,7 +51,7 @@ const Nickname = styled.input`
   border-radius: 5px;
 `;
 
-const HighLight = styled.div`
+const HighLight = styled.span`
   color: red;
   font-size: inherit;
 `;
@@ -95,17 +92,17 @@ function Register(props) {
         <MainAreaDiv>
           <Title>Sign in</Title>
           <OuterAreaDiv>
-            <Dialogue>ID ( 3~5 letters )<HighLight>*</HighLight></Dialogue>
+            <Dialogue>ID ( 3 ~ 5 letters ) <HighLight>*</HighLight></Dialogue>
             <UserId placeholder="ID"></UserId>
-            <Dialogue>PW ( 8~ 15 letters)<HighLight>*</HighLight></Dialogue>
+            <Dialogue>PW ( 8 ~ 15 letters ) <HighLight>*</HighLight></Dialogue>
             <UserPw placeholder="Password"></UserPw>
-            <Dialogue>Nickname<HighLight>*</HighLight></Dialogue>
+            <Dialogue>Nickname <HighLight>*</HighLight></Dialogue>
             <Nickname placeholder="Nickname"></Nickname>
           </OuterAreaDiv>
 
-          <AddButton
+          <JustButton
               desc={"submit"} width={"170px"} height={"50px"} image={"none"} color={"#b6f4ff"}
-            ></AddButton>
+            ></JustButton>
 
         </MainAreaDiv>
       </Container>
