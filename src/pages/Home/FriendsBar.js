@@ -5,11 +5,12 @@ import Friends from "./Friends";
 import addImage from "../../assets/images/addImage.png"
 
 const FriendsBarArea = styled.div`
-  background-color: #7ae2f2;
   width: 300px;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
+  margin-left: 32px;
 `;
 
 const FriendsWrapper = styled.div`
@@ -24,7 +25,9 @@ export default function FriendsBar(props) {
   return (
     <FriendsBarArea>
       <FriendsWrapper><Friends friends={props.friends}></Friends></FriendsWrapper>
-      <StyledLink to={"/addFriend"}><AddButton desc={"Click here to add Friend"} width={"280px"} height={"90px"} onClick={props.onAddFriend} image={addImage}></AddButton></StyledLink>
+      <StyledLink to={"/addFriend"}>
+        <AddButton desc={"닉네임으로 친구 추가"} width={"200px"} height={"40px"} onClick={props.onAddFriend} image={addImage}></AddButton>
+      </StyledLink>
     </FriendsBarArea>
   );
 }
