@@ -44,15 +44,16 @@ const MiniBox = styled.div`
 const UserProfileArea = styled.div`
     border-radius: 10px;
     background-color: rgb(255, 255,255);
-    flex: 3;
+    flex: 2;
 `;
 
 const StyledLink = styled(Link)`
     text-decoration: none;
+    margin: 20px;
 `;
 
 const TEXT = styled.div`
-    position: fixed;
+    // position: fixed;
     width: 100px;
     height: 20px;
     font-weight: 600;
@@ -68,7 +69,7 @@ export default function MainArea(props) {
             <OuterAreaDiv>
                 <WhiteBox>
                     <MiniBox>
-                        <TEXT>내 프로필</TEXT>
+                        {/* <TEXT>내 프로필</TEXT> */}
                         <UserProfileArea><UserProfile img={props.img} name={props.name} desc={props.desc}></UserProfile></UserProfileArea>
                         <StyledLink to="/settings"><JustButton
                             desc={"프로필 수정"} width={"170px"} height={"50px"} image={"none"} color={"#AEE9FF"}

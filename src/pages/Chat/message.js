@@ -14,6 +14,7 @@ const ChatContent = styled.div`
     background: white;
     border-radius: 10px;
     height:100%;
+    box-shadow: 3px 4px 7px 1px rgba(100, 115, 143, 0.5);
 `;
 
 const UserImg = styled.div`

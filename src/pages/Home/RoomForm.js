@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import peopleNumImage from "../../assets/images/peopleNum.png";
 
 
 const Room = styled.div`
@@ -47,8 +48,25 @@ const RoomImg = styled.img`
   margin-left: 15px;
 `;
 
+const RoomMemberNumArea = styled.div`
+  // height: 100%;
+  // margin-top: 30px;
+  display: flex;
+  // align-items: flex-start;
+`;
 
-export default function RoomForm({ name, desc, img, height }){
+const MemberNum = styled.div`
+  font-size: 15px;
+  font-weight: bold;
+`;
+
+const MemberNumImg = styled.img`
+  height: 20px;
+  width: 20px;
+`;
+
+
+export default function RoomForm({ name, desc, img, height, memberNum }){
     return (
       <Room height={height}>
         <RoomImg src={img}></RoomImg>
@@ -56,6 +74,10 @@ export default function RoomForm({ name, desc, img, height }){
           <RoomName>{name}</RoomName>
           <RoomDescription>{desc}</RoomDescription>
         </RoomDetail>
+        <RoomMemberNumArea>
+          <MemberNum>{memberNum}</MemberNum>
+          <MemberNumImg src={peopleNumImage}></MemberNumImg>
+        </RoomMemberNumArea>
       </Room>
     );
   }

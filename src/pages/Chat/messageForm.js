@@ -9,7 +9,6 @@ const Friend = styled.div`
   height: var(--parent-height);
   border-radius: 5px;
   transition: 0.3s;
-  // box-shadow: 0px 0px 20px 1px rgba(61, 61, 75, 0.2);
   margin-right: 20px;
 
   &:hover {

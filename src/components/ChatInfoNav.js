@@ -44,7 +44,7 @@ const FriendContainer = styled.div`
 
 const TopWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  align-items: center;
 `;
 
 const Text = styled.div`

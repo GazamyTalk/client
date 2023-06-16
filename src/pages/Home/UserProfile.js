@@ -5,8 +5,11 @@ const UserProfileInnerArea = styled.div`
 `;
 
 const User = styled.div`
-    margin: 30px;
+    // margin: 30px;
+    margin-left: 20px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     --parent-height: 200px;
     height: var(--parent-height);
 `;
@@ -20,7 +23,7 @@ const UserImg = styled.img`
 
 const UserDetail = styled.div`
     margin-left: 30px;
-    margin-top: 50px;
+    // margin-top: 50px;
     // display: flex;
     // flex-direction: column;
     // justify-content: center;

@@ -89,8 +89,12 @@ const Input = styled.input`
   height:45px;
   padding: 10px;
   margin-left: 30px;
+  padding-left: 25px;
   fonts-size: 20px;
   border: none;
+  &:focus{
+    border: none;
+  }
 `;
 
 const RoomTitle = styled.div`
@@ -158,7 +162,6 @@ function Chat(props) {
               <Message ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
             </Context>
           </ChatContent>
-
           <ChatInput>
             <Input placeholder="보낼 메세지를 적어주세요"></Input>
             <JustImg height={"65px"} width={"75px"} onClick={props.sendMessage} image={sendImage} color={"white"}></JustImg>
