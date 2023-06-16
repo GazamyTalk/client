@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Background from "../../components/Background.js";
 import JustButton from "../../components/justButton.js";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -86,6 +87,16 @@ const Title = styled.div`
   text-align: center;
 `;
 
+const StyledLink = styled(Link)`
+  color: #2e8eff;
+  font-size: 16px;
+  font-weight: 900;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 function Register(props) {
   return (
     <Background>
@@ -100,7 +111,9 @@ function Register(props) {
             <Dialogue>Nickname <HighLight>*</HighLight></Dialogue>
             <Nickname placeholder="Nickname"></Nickname>
           </OuterAreaDiv>
-
+          <StyledLink to={"/login"}>
+              Already have account?
+            </StyledLink>
           <JustButton
               desc={"submit"} width={"200px"} height={"50px"} image={"none"} color={"#b6f4ff"}
             ></JustButton>
