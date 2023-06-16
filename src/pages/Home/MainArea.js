@@ -62,6 +62,11 @@ const TEXT = styled.div`
     margin-left:40px;
 `;
 
+const RemainingArea = styled.div`
+    margin-bottom: 100px;
+    margin-top: 50px;
+`;
+
 export default function MainArea(props) {
     return (
         <MainAreaDiv>
@@ -74,7 +79,9 @@ export default function MainArea(props) {
                             desc={"프로필 수정"} width={"170px"} height={"50px"} image={"none"} color={"#AEE9FF"}
                         ></JustButton></StyledLink>
                     </MiniBox>
-                    <Rooms rooms={props.rooms}></Rooms>
+                    <RemainingArea>
+                        <Rooms rooms={props.rooms}></Rooms>
+                    </RemainingArea>
                 </WhiteBox>
             </OuterAreaDiv>
         </MainAreaDiv>
