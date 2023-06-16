@@ -10,18 +10,9 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Dialogue = styled.div`
-  font-size: 15px;
-  background: white;
-  width: 100%;
-  padding: 5px;
-  height: 20px;
-  border-radius: 10px 10px 10px 0px;
-`;
-
 const UserId = styled.input`
-margin: 0 20px 20px 20px;
-  padding: 5px;
+  margin: 0 20px 20px 20px;
+  padding: 12px;
   width: 100%;
   background: #E5F9FF;
   height 35px;
@@ -32,7 +23,7 @@ margin: 0 20px 20px 20px;
 
 const UserPw = styled.input`
 margin: 0 20px 20px 20px;
-  padding: 5px;
+  padding: 12px;
   
   width: 100%;
   background: #E5F9FF;
@@ -42,17 +33,12 @@ margin: 0 20px 20px 20px;
   border-radius: 5px;
 `;
 
-const HighLight = styled.span`
-  color: red;
-  font-size: inherit;
-`;
-
 //로고 및 로그인 설명
 
 const MainAreaDiv = styled.div`
   background: white;
   width: 30%;
-  height: 70%;
+  height: 60%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -95,22 +81,18 @@ function Register(props) {
         <MainAreaDiv>
           <Title>User Login</Title>
           <OuterAreaDiv>
-            <Dialogue>
-              ID ( 3 ~ 5 letters ) <HighLight>*</HighLight>
-            </Dialogue>
+
             <UserId placeholder="ID"></UserId>
-            <Dialogue>
-              PW ( 8 ~ 15 letters ) <HighLight>*</HighLight>
-            </Dialogue>
+
             <UserPw placeholder="Password"></UserPw>
             <StyledLink to={"/register"}>
-              Don't have account yet? sign in here.
+              Don't have account yet?
             </StyledLink>
           </OuterAreaDiv>
 
           <JustButton
             desc={"Login"}
-            width={"170px"}
+            width={"200px"}
             height={"50px"}
             Btnimg={""}
             color={"#b6f4ff"}

@@ -17,10 +17,10 @@ const ChatContent = styled.div`
 `;
 
 const UserImg = styled.div`
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     background-image: url(${props => props.UserImg??ReplacedImg});
-    background-size: 50px 50px;
+    background-size: 90px 90px;
     `;
 
 
