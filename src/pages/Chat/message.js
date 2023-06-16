@@ -15,7 +15,7 @@ const ChatContent = styled.div`
     border-radius: 10px;
     height: 15px;
     box-shadow: 3px 4px 7px 1px rgba(100, 115, 143, 0.5);
-    margin-top: 35px;
+    margin-top: 5px;
     margin-left:15px;
     display: flex;
     flex-direction: column;
@@ -40,16 +40,22 @@ const UserName = styled.div`
     line-height: 22px;
     color: #333333;
     margin-top: 10px;
-    margin-left: 115px;
-    position:absolute;
+    margin-left: 11px;
+    // position:absolute;
+`;
+
+const ChatArea = styled.div`
+    
 `;
 
 export default function Friends(props) {
     return (
         <TextArea>
             <UserImg usrImg={props.usrImg} />
-            <UserName>{props.UserName}</UserName>
-            <ChatContent>{props.ChatContent}</ChatContent>
+            <ChatArea>
+                <UserName>{props.UserName}</UserName>
+                <ChatContent>{props.ChatContent}</ChatContent>
+            </ChatArea>
         </TextArea>
     );
 }

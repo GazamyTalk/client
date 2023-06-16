@@ -37,6 +37,9 @@ const FriendContainer = styled.div`
   flex: 1;
   // height: 100px;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display:none;
+  }
 `;
 
 const TopWrapper = styled.div`

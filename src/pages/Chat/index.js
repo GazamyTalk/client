@@ -46,9 +46,10 @@ const Chatting = styled.div`
 `;
 
 const RoomInfo = styled.div`
-height: 140px;
+height: 180px;
 display: flex;
 align-items: center;
+// margin-bottom: 120px;
 `;
 
 const ChatLogo = styled.div`
@@ -66,6 +67,11 @@ const ChatContent = styled.div`
   flex: 1;
   overflow-y: scroll;
   overflow-x: hidden;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  &::-webkit-scrollbar {
+    display:none;
+  }
 `;
 
 const Text = styled.div`
@@ -121,7 +127,7 @@ const RoomSubTitle = styled.div`
 
 const Context = styled.div`
   margin-left:40px;
-  margin-top:90px;
+  // margin-top:90px;
   font-size: 20px;
 `;
 
@@ -166,6 +172,18 @@ function Chat(props) {
             <Context>
               <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
               <Message UserName="^오^" ChatContent="lol you look so gazamy" usrImg={p4}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
               <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
               <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
               <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>

@@ -24,6 +24,9 @@ const WhiteBox = styled.div`
     box-shadow: 0px 4px 10px rgba(78, 108, 124, 0.25);
     border-radius: 10px;
     overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display:none;
+    }
     display: flex;
     flex-direction: column;
     align-items: center;

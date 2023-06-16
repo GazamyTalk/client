@@ -28,19 +28,19 @@ const FriendsWrapper = styled.div`
 
 const StyledLink = styled(Link)`
   width: 260px;
-  height: 40px;
+  height: 80px;
   display: flex;
   text-decoration: none;
-  postition: relative;
-  botttom: 10px;
-  position: absolute;
-  bottom:8%;
+  // postition: relative;
+  // botttom: 10px;
+  // position: absolute;
+  // bottom:8%;
 `;
 
 const FriendContainer = styled.div`
   width: 100%;
   display: flex;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 
 `;
 
@@ -57,9 +57,14 @@ const Text = styled.div`
 
 const UpperDiv = styled.div`
   width: 100%;
+  flex: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display:none;
+  }
 `;
 
 const FriendsTop = styled.div`
@@ -70,24 +75,67 @@ const FriendsTop = styled.div`
   align-items: center;
 `;
 
-const bgColor = styled.div`
-  background-color:#B6F4FF;
+const BgColor = styled.div`
+  // background-color:#B6F4FF;
+`;
+
+const LowerDiv = styled.div`
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default function FriendsBar(props) {
   return (
     <FriendsBarArea>
+      <FriendsTop>
+        <TopWrapper>
+          <FriendIcon></FriendIcon>
+          <Text>채팅방 인원</Text>
+        </TopWrapper>
+      </FriendsTop>
       <UpperDiv>
-        <FriendsTop>
-          <TopWrapper>
-            <FriendIcon></FriendIcon>
-            <Text>채팅방 인원</Text>
-          </TopWrapper>
-        </FriendsTop>
         <FriendContainer>
           <FriendsWrapper>
             <Friends
               friends={[
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "김뫄뫄",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "김뫄뫄",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "김뫄뫄",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "김뫄뫄",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "김뫄뫄",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "김뫄뫄",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "김뫄뫄",
+                  description: "testDesc",
+                },
                 {
                   userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
                   username: "김뫄뫄",
@@ -108,18 +156,21 @@ export default function FriendsBar(props) {
           </FriendsWrapper>
         </FriendContainer>
       </UpperDiv>
-      <StyledLink to={"/addFriend"}>
-        <bgColor>
-          <AddButton
-            desc={"대화상대 초대하기"}
-            font={"15px"}
-            width={"260px"}
-            height={"84px"}
-            onClick={props.onAddFriend}
-            image={addImage}
-          ></AddButton>
-        </bgColor>
-      </StyledLink>
+      <LowerDiv>
+        <StyledLink to={"/addFriend"}>
+          <BgColor>
+            <AddButton
+              desc={"대화상대 초대하기"}
+              font={"15px"}
+              width={"260px"}
+              height={"84px"}
+              onClick={props.onAddFriend}
+              image={addImage}
+              color={"#b6f4ff"}
+            ></AddButton>
+          </BgColor>
+        </StyledLink>
+      </LowerDiv>
     </FriendsBarArea>
   );
 }
