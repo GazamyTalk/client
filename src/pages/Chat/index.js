@@ -64,6 +64,8 @@ const ChatLogo = styled.div`
 
 const ChatContent = styled.div`
   flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
 const Text = styled.div`
@@ -165,6 +167,12 @@ function Chat(props) {
               <Message UserName="^오^" ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
               <Message UserName="( 0 3 0)" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
               <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="hanseo972" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="hanseo972" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="hanseo972" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="hanseo972" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="hanseo972" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="hanseo972" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
               <Message UserName="hanseo972" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
             </Context>
           </ChatContent>

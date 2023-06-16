@@ -40,6 +40,8 @@ const StyledLink = styled(Link)`
 const FriendContainer = styled.div`
   width: 100%;
   display: flex;
+  overflow-y: scroll;
+
 `;
 
 const TopWrapper = styled.div`
@@ -82,6 +84,46 @@ export default function FriendsBar(props) {
           <FriendsWrapper>
             <Friends
               friends={[
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "testUser",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "testUser",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "testUser",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "testUser",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "testUser",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "testUser",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "testUser",
+                  description: "testDesc",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "testUser",
+                  description: "testDesc",
+                },
                 {
                   userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
                   username: "testUser",

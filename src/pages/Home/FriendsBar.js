@@ -34,7 +34,9 @@ height: 40px;
 
 const FriendContainer = styled.div`
   width: 100%;
-  height:100px;
+  flex: 1;
+  // height: 100px;
+  overflow-y: scroll;
 `;
 
 const TopWrapper = styled.div`
