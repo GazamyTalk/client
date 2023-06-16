@@ -8,7 +8,10 @@ import ChatInfoNav from "../../components/ChatInfoNav.js";
 import Message from "./message.js";
 import sendImage from "../../assets/images/send.png";
 import user from "../../assets/images/peopleNum.png"
-
+import chatimg from "../../assets/images/profile7.png";
+import p1 from "../../assets/images/profile.png";
+import p4 from "../../assets/images/profile4.png";
+import p6 from "../../assets/images/profile6.png";
 
 const HomeLogo = styled.div`
   background-image: url(${home});
@@ -50,11 +53,12 @@ align-items: center;
 
 const ChatLogo = styled.div`
   background-size: 120px 120px;
-  background-image: url(${gazamy});
-  width: 120px;
+  background-image: url(${chatimg});
+  background-repeat: no-repeat;
+  width: 150px;
   height: 120px;
-  margin-left: 30px;
-  border: 5px solid cyan;
+  margin-left: 60px;
+  margin-top:90px;
   border-radius: 10px;
 `;
 
@@ -68,6 +72,7 @@ const Text = styled.div`
   height: 60%;
   flex-direction: column;
   margin-left: 10px;
+  margin-top:85px;
 `;
 
 const ChatInput = styled.div`
@@ -112,7 +117,8 @@ const RoomSubTitle = styled.div`
 `;
 
 const Context = styled.div`
-  margin: 30px;
+  margin-left:40px;
+  margin-top:90px;
   font-size: 20px;
 `;
 
@@ -155,11 +161,11 @@ function Chat(props) {
 
           <ChatContent>
             <Context>
-              <Message ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
-              <Message ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
-              <Message ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
-              <Message ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
-              <Message ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
+              <Message UserName="^오^" ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="( 0 3 0)" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="hanseo972" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
             </Context>
           </ChatContent>
           <ChatInput>
