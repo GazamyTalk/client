@@ -37,14 +37,14 @@ margin: 0 20px 20px 20px;
 
 const MainAreaDiv = styled.div`
   background: white;
-  width: 30%;
-  height: 60%;
+  width: 430px;
+  height: 420px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  border-radius: 3px;
-  box-shadow: 0px 10px 10px 1px black;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px #4E6C7C;
 `;
 
 const OuterAreaDiv = styled.div`
@@ -55,11 +55,13 @@ const OuterAreaDiv = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 900;
   height: 50px;
   background: white;
   padding: 10px;
+  margin-top:20px;
+  margin-bottom:0px;
   border-radius: 10px 10px 0px 0px;
   text-align: center;
 `;
