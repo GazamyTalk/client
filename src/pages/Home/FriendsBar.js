@@ -39,11 +39,13 @@ const FriendContainer = styled.div`
 
 const TopWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const Text = styled.div`
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 900;
+  margin-left: 5px;
 `;
 
 const FriendsTop = styled.div`
