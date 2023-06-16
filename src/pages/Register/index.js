@@ -60,14 +60,14 @@ const HighLight = styled.span`
 
 const MainAreaDiv = styled.div`
   background: white;
-  width: 30%;
-  height: 60%;
+  width: 430px;
+  height: 584px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: 0px 10px 10px 1px black;
+  box-shadow: 0px 4px 10px #4E6C7C;
 `;
 
 const OuterAreaDiv = styled.div`
@@ -83,6 +83,8 @@ const Title = styled.div`
   height: 50px;
   background: white;
   padding: 10px;
+  margin-top:30px;
+
   border-radius: 10px 10px 0px 0px;
   text-align: center;
 `;
