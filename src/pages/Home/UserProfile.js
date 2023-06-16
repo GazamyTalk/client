@@ -12,8 +12,8 @@ const User = styled.div`
 `;
 
 const UserImg = styled.img`
-    height: 100%;
-    width: var(--parent-height);
+    width: 120px;
+    height: 125px;
     object-fill: cover;
     border-radius: 10px;
 `;
