@@ -2,10 +2,11 @@ import styled from "styled-components";
 import Rooms from "./Rooms";
 import UserProfile from "./UserProfile";
 import JustButton from "../../components/justButton.js";
+import {Link} from "react-router-dom";
 
 const MainAreaDiv = styled.div`
     flex: 1;
-`
+`;
 
 const OuterAreaDiv = styled.div`
     display: flex;
@@ -13,7 +14,7 @@ const OuterAreaDiv = styled.div`
     height: calc(100% - 80px);
     justify-content: center;
     align-items: center;
-`
+`;
 
 const WhiteBox = styled.div`
     position: relative;
@@ -26,7 +27,7 @@ const WhiteBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-`
+`;
 
 const MiniBox = styled.div`
     box-sizing: border-box;
@@ -37,13 +38,17 @@ const MiniBox = styled.div`
     display: flex;
     align-items: center;
     margin-top:73px;
-`
+`;
     
 const UserProfileArea = styled.div`
     border-radius: 10px;
     background-color: rgb(255, 255,255);
     flex: 3;
-`
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+`;
 
 const TEXT = styled.div`
     position: fixed;
@@ -54,7 +59,7 @@ const TEXT = styled.div`
     line-height: 20px;
     color: #333333;
     margin-left:40px;
-`
+`;
 
 export default function MainArea(props) {
     return (
@@ -64,9 +69,9 @@ export default function MainArea(props) {
                     <MiniBox>
                         <TEXT>내 프로필</TEXT>
                         <UserProfileArea><UserProfile img={props.img} name={props.name} desc={props.desc}></UserProfile></UserProfileArea>
-                        <JustButton
+                        <StyledLink to="/settings"><JustButton
                             desc={"프로필 수정"} width={"170px"} height={"50px"} image={"none"} color={"#AEE9FF"}
-                        ></JustButton>
+                        ></JustButton></StyledLink>
                     </MiniBox>
                     <Rooms rooms={props.rooms}></Rooms>
                 </WhiteBox>

@@ -7,7 +7,7 @@ import userImage from "../assets/images/friends.png";
 
 const FriendsBarArea = styled.div`
   background-color: #7ae2f2;
-  width: 300px;
+  width: 350px;
   height: 100vh;
   display: flex;
   flex-direction: column;

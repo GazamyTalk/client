@@ -26,7 +26,7 @@ const StyledAddImg = styled.img`
   margin: 20px 10px 20px 20px;
   background-image: url(${props => (props.image === "none" ? "" : `url(${props.image})`)});
   background-size: 40px 40px;
-  width: 40px;
+  // width: 40px;
   height: 40px;
 `;
 
