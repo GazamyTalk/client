@@ -36,7 +36,7 @@ const FormBackground = styled.div`
 const BlueForm = styled.div`
   display: flex;
   background: #7ae2f2;
-  width: 700px;
+  width: 550px;
   height: 70px;
   border-radius: 15px 15px 0px 0px;
   align-items: center;
@@ -79,16 +79,16 @@ const BlockText = styled.div`
 `;
 
 const Text = styled.div`
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 900;
-  margin: 20px;
+  margin: 57px 0px 15px 25px;
 `;
-
+ 
 const ImageContainer = styled.div`
   background: white;
   width:420px;
   height:250px;
-  border: 5px solid gray;
+  border: 2px solid rgba(201, 209, 214, 0.5);
   border-radius: 10px;
   margin: 10px;
   display: flex;
@@ -113,7 +113,7 @@ const ButtonContainer = styled.div`
 const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 700px;
+  width: 550px;
   height: 80vh;
   align-item: center;
   justify-content: center;
@@ -158,9 +158,9 @@ function AddFriend() {
 
                 <InputForm>
                   <BlockText>닉네임</BlockText>
-                  <Input placeholder="새 닉네임을 입력하세요 (0/20)"></Input>
+                  <Input placeholder="닉네임을 입력하세요 (0/20)"></Input>
                   <BlockText>상태메세지</BlockText>
-                  <Input placeholder="새 상태메세지를 입력하세요 (0/60)"></Input>
+                  <Input placeholder="상태메세지를 입력하세요 (0/60)"></Input>
                 </InputForm>
                 <ButtonContainer>
                   <JustButton
