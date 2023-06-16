@@ -32,7 +32,6 @@ const MiniBox = styled.div`
     box-sizing: border-box;
     width: 730px;
     height: 230px;
-    background: #ffffff;
     border: 2px solid rgba(221, 221, 221, 0.5);
     border-radius: 10px;
     display: flex;

@@ -21,13 +21,17 @@ const StyledLink = styled(Link)`
   text-decoration:none;
 `;
 
+const buttonsort = styled.div`
+  
+`;
+
 export default function FriendsBar(props) {
   return (
     <FriendsBarArea>
       <FriendsWrapper><Friends friends={props.friends}></Friends></FriendsWrapper>
-      <StyledLink to={"/addFriend"}>
-        <AddButton desc={"닉네임으로 친구 추가"} width={"200px"} height={"40px"} onClick={props.onAddFriend} image={addImage}></AddButton>
-      </StyledLink>
+        <StyledLink to={"/addFriend"}>
+          <AddButton desc={"닉네임으로 친구 추가"} width={"200px"} height={"40px"} onClick={props.onAddFriend} image={addImage}></AddButton>
+        </StyledLink>
     </FriendsBarArea>
   );
 }
