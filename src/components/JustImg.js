@@ -6,6 +6,7 @@ const AddButtonArea = styled.div`
   align-items: center;
   justify-content: center;
   margin: 10px;
+  margin-bottom:60px;
   // width: 100%;
   height: ${props => props.height};
   width: ${props => props.width};

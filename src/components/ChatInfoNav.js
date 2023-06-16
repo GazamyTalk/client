@@ -63,9 +63,13 @@ const UpperDiv = styled.div`
 const FriendsTop = styled.div`
   width: 90%;
   height: 80px;
-  border-bottom: 1px solid white;
+  border-bottom: 3px solid #E1F9FF;
   display: flex;
   align-items: center;
+`;
+
+const bgColor = styled.div`
+  background-color:#B6F4FF;
 `;
 
 export default function FriendsBar(props) {
@@ -84,12 +88,17 @@ export default function FriendsBar(props) {
               friends={[
                 {
                   userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "testUser",
+                  username: "김뫄뫄",
                   description: "testDesc",
                 },
                 {
                   userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "testUser2",
+                  username: "김뫄뫄돈갚아",
+                  description: "testDesc2",
+                },
+                {
+                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
+                  username: "^오^",
                   description: "testDesc2",
                 },
               ]}
@@ -98,14 +107,16 @@ export default function FriendsBar(props) {
         </FriendContainer>
       </UpperDiv>
       <StyledLink to={"/addFriend"}>
-        <AddButton
-          desc={"대화상대 초대하기"}
-          font={"15px"}
-          width={"260px"}
-          height={"84px"}
-          onClick={props.onAddFriend}
-          image={addImage}
-        ></AddButton>
+        <bgColor>
+          <AddButton
+            desc={"대화상대 초대하기"}
+            font={"15px"}
+            width={"260px"}
+            height={"84px"}
+            onClick={props.onAddFriend}
+            image={addImage}
+          ></AddButton>
+        </bgColor>
       </StyledLink>
     </FriendsBarArea>
   );

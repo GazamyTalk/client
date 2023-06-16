@@ -94,6 +94,7 @@ const Input = styled.input`
   height:45px;
   padding: 10px;
   margin-left: 30px;
+  margin-bottom: 50px;
   padding-left: 25px;
   fonts-size: 20px;
   border: none;
@@ -162,10 +163,10 @@ function Chat(props) {
           <ChatContent>
             <Context>
               <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
-              <Message UserName="^오^" ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
-              <Message UserName="( 0 3 0)" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
-              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
-              <Message UserName="hanseo972" ChatContent="hello world this is me, mario!" usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"/>
+              <Message UserName="^오^" ChatContent="lol you look so gazamy" usrImg={p4}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
             </Context>
           </ChatContent>
           <ChatInput>
