@@ -11,14 +11,13 @@ const store = configureStore({
         [memberApi.reducerPath]: memberApi.reducer,
         [roomApi.reducerPath]: roomApi.reducer,
     },
-    middleware: (getDefaultMiddleware) => {
+    middleware: (getDefaultMiddleware) => 
         getDefaultMiddleware({}).concat([
             accountApi.middleware,
             friendApi.middleware,
             memberApi.middleware,
             roomApi.middleware,
         ])
-    }
 });
 
 export default store;
