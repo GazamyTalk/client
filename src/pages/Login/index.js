@@ -107,10 +107,10 @@ function Register(props) {
             Btnimg={""}
             color={"#b6f4ff"}
             onClick={() => {
-              authService.login(id, pw, (data, sessionid) => {
-                console.log(data, sessionid);
+              authService.login(id, pw, (data) => {
+                // console.log(data, sessionid);
                 if ( data.success ) {
-                  debugger;
+                  // debugger;
                   alert('succeed');
                   window.location.reload();
                 } else {

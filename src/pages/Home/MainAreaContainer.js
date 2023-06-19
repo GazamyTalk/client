@@ -1,29 +1,34 @@
 import styled from "styled-components";
 import MainArea from "./MainArea";
 import MyUserImg from "../../assets/images/profile.png";
+// import accountApi from "../../services/account/api";
+// import roomApi from "../../services/rooms/api";
+import mainApi from "../../services/mainApi/api";
 
 const MainAreaContainerWrapper = styled.div`
 `;
 
 export default function MainAreaContainer() {
-    return (
+    const accountQuery = mainApi.useGetAccountQuery();
+    const roomQuery = mainApi.useGetRoomsQuery();
+
+    if ( accountQuery.isLoading || roomQuery.isLoading ) {
+        return <></>
+    }
+
+    const accountData = accountQuery.data.userInfo;
+    const roomData = roomQuery.data.roomInfos;
+
+    // console.log('accountData:', accountData);
+    // console.log(roomQuery);
+    console.log('roomData:', roomData);
+    
+    return <>
         <MainArea
-            img={MyUserImg}
-            name={"김뫄뫄"}
-            desc={"나는 아무 생각이 없다 왜냐하면 아무 생각이 없기 때문이다"}
-            rooms={
-                [
-                    {roomImage: "https://i.ibb.co/yWvqky7/tmp2.jpg", roomname: "testRoomname", description: "testRoomDesc", users: [1, 2, 3]},
-                    {roomImage: "https://i.ibb.co/yWvqky7/tmp2.jpg", roomname: "testRoomname", description: "testRoomDesc", users: { length: 32 }},
-                    {roomImage: "https://i.ibb.co/yWvqky7/tmp2.jpg", roomname: "testRoomname", description: "testRoomDesc", users: { length: 32 }},
-                    {roomImage: "https://i.ibb.co/yWvqky7/tmp2.jpg", roomname: "testRoomname", description: "testRoomDesc", users: { length: 32 }},
-                    {roomImage: "https://i.ibb.co/yWvqky7/tmp2.jpg", roomname: "testRoomname", description: "testRoomDesc", users: { length: 32 }},
-                    {roomImage: "https://i.ibb.co/yWvqky7/tmp2.jpg", roomname: "testRoomname", description: "testRoomDesc", users: { length: 32 }},
-                    {roomImage: "https://i.ibb.co/yWvqky7/tmp2.jpg", roomname: "testRoomname", description: "testRoomDesc", users: { length: 32 }},
-                    {roomImage: "https://i.ibb.co/yWvqky7/tmp2.jpg", roomname: "testRoomname", description: "testRoomDesc", users: { length: 32 }},
-                    {roomImage: "https://i.ibb.co/yWvqky7/tmp2.jpg", roomname: "testRoomname", description: "testRoomDesc", users: { length: 32 }},
-                ]
-            }
+            img={accountData.userImage}
+            name={accountData.nickname}
+            desc={accountData.description}
+            rooms={roomData}
         ></MainArea>
-    );
+    </>;
 }

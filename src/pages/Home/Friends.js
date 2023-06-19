@@ -20,6 +20,7 @@ export default function Friends(props) {
                         desc={friend.description}
                         height={'100px'}
                         key={friend.username}
+                        privateChat={props.privateChat}
                     ></FriendForm>
                 )
                 

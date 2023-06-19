@@ -7,11 +7,13 @@ import AddFriend from "./pages/AddFriend";
 import Login from "./pages/Login"
 import Settings from "./pages/Settings"
 import "./App.css";
-import api from "./services/account/api";
+// import api from "./services/account/api";
+import mainApi from "./services/mainApi/api";
 import LoadingPage from "./pages/Loading";
 import { useEffect } from "react";
+
 function App() {
-  const query = api.useGetAccountQuery();
+  const query = mainApi.useGetAccountQuery();
   // return query.isLoading ? (
   //   <LoadingPage></LoadingPage>
   // ) : (
@@ -34,7 +36,7 @@ function App() {
     return <LoadingPage></LoadingPage>
   }
   else {
-    console.log(query.data);
+    // console.log(query.data);
     if ( !query.isSuccess ) {
       return <h1>Can't find server</h1>
     }

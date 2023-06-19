@@ -1,8 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const api = createApi({
-  reducerPath: "friendApi",
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_SERVER_URL}/api` }),
+  reducerPath: "memberApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: `${process.env.REACT_APP_API_SERVER_URL}/api`,
+    credentials: 'include'
+  }),
   tagTypes: ["members"],
   endpoints: (builder) => ({
     getMembers: builder.query({

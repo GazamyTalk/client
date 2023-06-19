@@ -2,7 +2,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const api = createApi({
   reducerPath: "accountApi",
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_SERVER_URL}/api` }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: `${process.env.REACT_APP_API_SERVER_URL}/api`,
+    credentials: 'include'
+  }),
   tagTypes: ["account"],
   endpoints: (builder) => ({
     getAccount: builder.query({
@@ -19,7 +22,7 @@ const api = createApi({
       },
       invalidatesTags: (result, error, arg) => [{ type: "account" }]
     }),
-  })
+  }),
 });
 
 export default api;

@@ -12,6 +12,7 @@ import chatimg from "../../assets/images/profile7.png";
 import p1 from "../../assets/images/profile.png";
 import p4 from "../../assets/images/profile4.png";
 import p6 from "../../assets/images/profile6.png";
+import qs from "qs";
 
 const HomeLogo = styled.div`
   background-image: url(${home});
@@ -150,6 +151,8 @@ align-items: center;
 `;
 
 function Chat(props) {
+  const query = qs.parse(window.location.search);
+  const roomId = query.roomId;
   return (
     <Background>
       <Wrapper>
@@ -196,7 +199,7 @@ function Chat(props) {
           </ChatInput>
         </Chatting>
         
-        <ChatInfoNav></ChatInfoNav>
+        <ChatInfoNav roomId={roomId}></ChatInfoNav>
       </Wrapper>
     </Background>
   );

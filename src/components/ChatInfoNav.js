@@ -152,12 +152,13 @@ export default function FriendsBar(props) {
                   description: "testDesc2",
                 },
               ]}
+              privateChat={false}
             ></Friends>
           </FriendsWrapper>
         </FriendContainer>
       </UpperDiv>
       <LowerDiv>
-        <StyledLink to={"/addFriend"}>
+        <StyledLink to={`/addFriend?type=member&roomId=${props.roomId}`}>
           <BgColor>
             <AddButton
               desc={"대화상대 초대하기"}

@@ -71,7 +71,7 @@ export default function FriendsBar(props) {
           <Text>친구</Text>
         </TopWrapper>
 
-       <StyledLink to={"/addFriend"}><AddButton desc={"닉네임으로 친구 추가"} font={"15px"}width={"220px"} height={"40px"} onClick={props.onAddFriend} image={addImage}></AddButton></StyledLink>
+       <StyledLink to={"/addFriend?type=friend"}><AddButton desc={"닉네임으로 친구 추가"} font={"15px"}width={"220px"} height={"40px"} onClick={props.onAddFriend} image={addImage}></AddButton></StyledLink>
       </FriendsTop>
       <FriendContainer>
         <FriendsWrapper><Friends friends={props.friends}></Friends></FriendsWrapper>

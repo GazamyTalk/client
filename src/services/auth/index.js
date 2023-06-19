@@ -20,7 +20,9 @@ export function login(username, password, callback) {
         },
         body: JSON.stringify({ username, password })
     })
-    .then(async (response) => callback(await response.json(), response.headers.get('content-type')))
+    // .then(async (response) => callback(await response.json(), response.headers.get('content-type')))
+    .then((response) => response.json())
+    .then(callback)
 }
 
 export function logout(callback) {

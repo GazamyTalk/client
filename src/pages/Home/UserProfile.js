@@ -6,9 +6,9 @@ const UserProfileInnerArea = styled.div`
 
 const User = styled.div`
     // margin: 30px;
-    margin-left: 20px;
+    margin-left: 60px;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     --parent-height: 200px;
     height: var(--parent-height);

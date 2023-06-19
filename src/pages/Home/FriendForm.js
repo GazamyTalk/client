@@ -49,12 +49,14 @@ const FriendImg = styled.img`
 const Chatimg = styled.div`
     width: 40px;
     height: 40px;
+    margin-right: 15px;
     background-image: url(${chat});
     background-size: 40px 40px;
     background-repeat: no-repeat;
 `;
 
-export default function FriendForm({ name, desc, img, height }){
+export default function FriendForm({ name, desc, img, height, privateChat }){
+  privateChat = privateChat ?? true
   return (
       <Friend height={height}>
         <FriendImg src={img}></FriendImg>
@@ -62,7 +64,7 @@ export default function FriendForm({ name, desc, img, height }){
           <FriendName>{name}</FriendName>
           <FriendDescription>{desc}</FriendDescription>
         </FriendDetail>
-        <Chatimg></Chatimg>
+        {privateChat ? <Chatimg></Chatimg> : <></>}
       </Friend>
 
   );

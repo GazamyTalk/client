@@ -4,7 +4,7 @@ import JustButton from "../../components/justButton.js";
 import home from "../../assets/images/home.png";
 import FriendNavContainer from "../Home/FriendsBarContainer.js";
 import ProfileHandler from "./profileHandler.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import prof1 from "../../assets/images/profile1.png";
 import prof2 from "../../assets/images/profile2.png";
@@ -14,6 +14,10 @@ import prof5 from "../../assets/images/profile5.png";
 import prof6 from "../../assets/images/profile6.png";
 import prof7 from "../../assets/images/profile.png";
 import prof8 from "../../assets/images/profile7.png";
+import { useState } from "react";
+// import accoutnApi from "../../services/account/api.js";
+import mainApi from "../../services/mainApi/api.js";
+import { useEffect } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -132,6 +136,19 @@ const TextWrapper = styled.div`
 `;
 
 function AddFriend() {
+  const query = mainApi.useGetAccountQuery();
+  const [editAccount, editAccountQuery] = mainApi.useEditAccountMutation();
+  const [nick, setNick] = useState('');
+  const [desc, setDesc] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if ( !query.isLoading && query.data?.success ) {
+      setNick(query.data.userInfo.nickname);
+      setDesc(query.data.userInfo.description);
+    }
+  }, [query.isLoading]);
+
   return (
     <Background>
       <Container>
@@ -158,9 +175,13 @@ function AddFriend() {
 
                 <InputForm>
                   <BlockText>닉네임</BlockText>
-                  <Input placeholder="닉네임을 입력하세요 (0/20)"></Input>
+                  <Input placeholder="닉네임을 입력하세요 (0/20)" value={nick} onChange={(e) => {
+                    setNick(e.target.value);
+                  }}></Input>
                   <BlockText>상태메세지</BlockText>
-                  <Input placeholder="상태메세지를 입력하세요 (0/60)"></Input>
+                  <Input placeholder="상태메세지를 입력하세요 (0/60)" value={desc} onChange={(e) => {
+                    setDesc(e.target.value);
+                  }}></Input>
                 </InputForm>
                 <ButtonContainer>
                   <JustButton
@@ -168,6 +189,17 @@ function AddFriend() {
                     width={"150px"}
                     height={"50px"}
                     color={"#82E8FF"}
+                    onClick={async () => {
+                      await editAccount(
+                        { 
+                          patchData: {
+                            nickname: nick,
+                            description: desc
+                          }
+                        }
+                      ).unwrap();
+                      navigate('/');
+                    }}
                   ></JustButton>
                 </ButtonContainer>
 
