@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Background from "../../components/Background.js";
 import JustButton from "../../components/justButton.js";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import * as authService from "../../services/auth/index.js";
 
 const Container = styled.div`
   display: flex;
@@ -77,6 +79,8 @@ const StyledLink = styled(Link)`
 `;
 
 function Register(props) {
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
   return (
     <Background>
       <Container>
@@ -84,9 +88,13 @@ function Register(props) {
           <Title>User Login</Title>
           <OuterAreaDiv>
 
-            <UserId placeholder="ID"></UserId>
+            <UserId placeholder="ID" value={id} onChange={(e) => {
+              setId(e.target.value)
+            }}></UserId>
 
-            <UserPw placeholder="Password"></UserPw>
+            <UserPw placeholder="Password" value={pw} onChange={(e) => {
+              setPw(e.target.value)
+            }}></UserPw>
             <StyledLink to={"/register"}>
               Don't have account yet?
             </StyledLink>
@@ -98,6 +106,18 @@ function Register(props) {
             height={"50px"}
             Btnimg={""}
             color={"#b6f4ff"}
+            onClick={() => {
+              authService.login(id, pw, (data, sessionid) => {
+                console.log(data, sessionid);
+                if ( data.success ) {
+                  debugger;
+                  alert('succeed');
+                  window.location.reload();
+                } else {
+                  alert(`failed: ${data.error}`);
+                }
+              });
+            }}
           ></JustButton>
         </MainAreaDiv>
       </Container>

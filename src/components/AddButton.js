@@ -5,7 +5,8 @@ const AddButtonArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding:0px 25px 0px 0px;
+  // padding:0px 25px 0px 0px;
+  padding:0px 0px 0px 0px;
   height: ${props => props.height};
   width: ${props => props.width};
   background: ${props => props.color};
@@ -23,7 +24,9 @@ const AddButtonArea = styled.div`
 const StyledAddImg = styled.img`
   display: flex;
   justify-content: center;
-  margin: 20px 10px 20px 20px;
+  // margin: 20px 10px 20px 20px;
+  // margin: 20px 10px 20px 10px;
+  margin: 20px 10px 20px 0px;
   background-image: url(${props => (props.image === "none" ? "" : `url(${props.image})`)});
   background-size: 40px 40px;
   // width: 40px;

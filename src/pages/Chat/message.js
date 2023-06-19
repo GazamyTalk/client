@@ -13,23 +13,49 @@ const ChatContent = styled.div`
     padding: 15px;
     background: white;
     border-radius: 10px;
-    height:100%;
+    height: 15px;
     box-shadow: 3px 4px 7px 1px rgba(100, 115, 143, 0.5);
+    margin-top: 5px;
+    margin-left:15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
 `;
 
 const UserImg = styled.div`
     width: 90px;
     height: 90px;
-    background-image: url(${props => props.UserImg??ReplacedImg});
+    background-image: url(${props => props.usrImg ?? ReplacedImg});
     background-size: 90px 90px;
-    `;
+    margin-left:10px;
+    margin-bottom:15px;
+`;
 
+const UserName = styled.div`
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    color: #333333;
+    margin-top: 10px;
+    margin-left: 11px;
+    // position:absolute;
+`;
+
+const ChatArea = styled.div`
+    
+`;
 
 export default function Friends(props) {
     return (
         <TextArea>
-            <UserImg></UserImg>
-            <ChatContent>{props.ChatContent}</ChatContent>
+            <UserImg usrImg={props.usrImg} />
+            <ChatArea>
+                <UserName>{props.UserName}</UserName>
+                <ChatContent>{props.ChatContent}</ChatContent>
+            </ChatArea>
         </TextArea>
     );
 }

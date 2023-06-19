@@ -3,6 +3,7 @@ import FriendForm from "./FriendForm";
 
 const FriendsNav = styled.nav`
     margin-top: 10px;
+    // overflow-y: scroll;
     // flex: 1;
     // overflow: hidden;
 `;

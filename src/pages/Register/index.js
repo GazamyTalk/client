@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import Background from "../../components/Background.js";
 import JustButton from "../../components/justButton.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import * as authService from "../../services/auth/index.js";
 
 const Container = styled.div`
   display: flex;
@@ -100,6 +102,10 @@ const StyledLink = styled(Link)`
 `;
 
 function Register(props) {
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+  const [nick, setNick] = useState('');
+  const navigate = useNavigate();
   return (
     <Background>
       <Container>
@@ -107,18 +113,38 @@ function Register(props) {
           <Title>Sign in</Title>
           <OuterAreaDiv>
             <Dialogue>ID ( 3 to 5 letters ) <HighLight>*</HighLight></Dialogue>
-            <UserId placeholder="ID"></UserId>
+            <UserId placeholder="ID" value={id} onChange={(e) => {
+              setId(e.target.value);
+            }}></UserId>
             <Dialogue>PW ( 8 to 15 letters ) <HighLight>*</HighLight></Dialogue>
-            <UserPw placeholder="Password"></UserPw>
+            <UserPw placeholder="Password" value={pw} onChange={(e) => {
+              setPw(e.target.value);
+            }}></UserPw>
             <Dialogue>Nickname <HighLight>*</HighLight></Dialogue>
-            <Nickname placeholder="Nickname"></Nickname>
+            <Nickname placeholder="Nickname" value={nick} onChange={(e) => {
+              setNick(e.target.value);
+            }}></Nickname>
           </OuterAreaDiv>
-          <StyledLink to={"/login"}>
+          <StyledLink to={"/"}>
               Already have account?
             </StyledLink>
           <JustButton
-              desc={"submit"} width={"200px"} height={"50px"} image={"none"} color={"#b6f4ff"}
-            ></JustButton>
+            desc={"submit"}
+            width={"200px"}
+            height={"50px"}
+            image={"none"}
+            color={"#b6f4ff"}
+            onClick={() => {
+              authService.register(id, pw, nick, (data) => {
+                if ( data.success ) {
+                  alert('succeed');
+                  navigate('/');
+                } else {
+                  alert(`failed: ${data.error}`);
+                }
+              })
+            }}>
+          </JustButton>
 
         </MainAreaDiv>
       </Container>

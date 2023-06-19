@@ -7,7 +7,11 @@ import JustImg from "../../components/JustImg.js";
 import ChatInfoNav from "../../components/ChatInfoNav.js";
 import Message from "./message.js";
 import sendImage from "../../assets/images/send.png";
-import user from "../../assets/images/peopleNum.png";
+import user from "../../assets/images/peopleNum.png"
+import chatimg from "../../assets/images/profile7.png";
+import p1 from "../../assets/images/profile.png";
+import p4 from "../../assets/images/profile4.png";
+import p6 from "../../assets/images/profile6.png";
 import setting from "../../assets/images/setting.png";
 
 const HomeLogo = styled.div`
@@ -43,23 +47,32 @@ const Chatting = styled.div`
 `;
 
 const RoomInfo = styled.div`
-  height: 140px;
-  display: flex;
-  align-items: center;
+height: 180px;
+display: flex;
+align-items: center;
+// margin-bottom: 120px;
 `;
 
 const ChatLogo = styled.div`
   background-size: 120px 120px;
-  background-image: url(${gazamy});
-  width: 120px;
+  background-image: url(${chatimg});
+  background-repeat: no-repeat;
+  width: 150px;
   height: 120px;
-  margin-left: 30px;
-  border: 5px solid cyan;
+  margin-left: 60px;
+  margin-top:90px;
   border-radius: 10px;
 `;
 
 const ChatContent = styled.div`
   flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  &::-webkit-scrollbar {
+    display:none;
+  }
 `;
 
 const Text = styled.div`
@@ -68,6 +81,7 @@ const Text = styled.div`
   height: 60%;
   flex-direction: column;
   margin-left: 10px;
+  margin-top:85px;
 `;
 
 const ChatInput = styled.div`
@@ -89,6 +103,7 @@ const Input = styled.input`
   height: 45px;
   padding: 10px;
   margin-left: 30px;
+  margin-bottom: 50px;
   padding-left: 25px;
   fonts-size: 20px;
   border: none;
@@ -112,7 +127,8 @@ const RoomSubTitle = styled.div`
 `;
 
 const Context = styled.div`
-  margin: 30px;
+  margin-left:40px;
+  // margin-top:90px;
   font-size: 20px;
 `;
 
@@ -188,26 +204,23 @@ function Chat(props) {
 
           <ChatContent>
             <Context>
-              <Message
-                ChatContent="hello world this is me, mario!"
-                usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"
-              />
-              <Message
-                ChatContent="lol you look so gazamy"
-                usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"
-              />
-              <Message
-                ChatContent="hello world this is me, mario!"
-                usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"
-              />
-              <Message
-                ChatContent="lol you look so gazamy"
-                usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"
-              />
-              <Message
-                ChatContent="hello world this is me, mario!"
-                usrImg="https://i.ibb.co/yWvqky7/tmp2.jpg"
-              />
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
+              <Message UserName="^오^" ChatContent="lol you look so gazamy" usrImg={p4}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="hello world this is me, mario!" usrImg={p6}/>
+              <Message UserName="김뫄뫄돈갚아" ChatContent="lol you look so gazamy" usrImg={p6}/>
+              <Message UserName="김뫄뫄" ChatContent="hello world this is me, mario!" usrImg={p1}/>
             </Context>
           </ChatContent>
           <ChatInput>

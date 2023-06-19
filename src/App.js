@@ -8,10 +8,11 @@ import Login from "./pages/Login"
 import Settings from "./pages/Settings"
 import ChatSettings from "./pages/ChatSettings"
 import "./App.css";
-// import api from "./services/friends/api";
+import api from "./services/account/api";
 import LoadingPage from "./pages/Loading";
+import { useEffect } from "react";
 function App() {
-  // const query = api.useGetAccountQuery();
+  const query = api.useGetAccountQuery();
   // return query.isLoading ? (
   //   <LoadingPage></LoadingPage>
   // ) : (
@@ -30,18 +31,34 @@ function App() {
   //   </BrowserRouter>
   // );
   // return <HomePage></HomePage>
-  return <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<HomePage></HomePage>}></Route>
-      <Route path="/loading" element={<LoadingPage></LoadingPage>}></Route>
-      <Route path="/chat" element={<Chat></Chat>}></Route>
-      <Route path="/register" element={<Register></Register>}></Route>
-      <Route path="/login" element={<Login></Login>}></Route>
-      <Route path="/addFriend" element={<AddFriend></AddFriend>}></Route>
-      <Route path="/settings" element={<Settings></Settings>}></Route>
-      <Route path="/chatsettings" element={<ChatSettings></ChatSettings>}></Route>
-    </Routes>
-  </BrowserRouter>
+  if ( query.isLoading ) {
+    return <LoadingPage></LoadingPage>
+  }
+  else {
+    console.log(query.data);
+    if ( !query.isSuccess ) {
+      return <h1>Can't find server</h1>
+    }
+    else if ( query.data.success ) {
+      return <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage></HomePage>}></Route>
+          <Route path="/loading" element={<LoadingPage></LoadingPage>}></Route>
+          <Route path="/chat" element={<Chat></Chat>}></Route>
+          <Route path="/addFriend" element={<AddFriend></AddFriend>}></Route>
+          <Route path="/settings" element={<Settings></Settings>}></Route>
+          <Route path="/chatsettings" element={<ChatSettings></ChatSettings>}></Route>
+        </Routes>
+      </BrowserRouter>
+    } else {
+      return <BrowserRouter>
+        <Routes>
+          <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/" element={<Login></Login>}></Route>
+        </Routes>
+      </BrowserRouter>
+    }
+  }
 }
 
 export default App;
