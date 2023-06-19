@@ -12,6 +12,8 @@ import chatimg from "../../assets/images/profile7.png";
 import p1 from "../../assets/images/profile.png";
 import p4 from "../../assets/images/profile4.png";
 import p6 from "../../assets/images/profile6.png";
+import qs from "qs";
+import setting from "../../assets/images/setting.png";
 
 const HomeLogo = styled.div`
   background-image: url(${home});
