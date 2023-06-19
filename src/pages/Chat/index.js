@@ -12,7 +12,6 @@ import chatimg from "../../assets/images/profile7.png";
 import p1 from "../../assets/images/profile.png";
 import p4 from "../../assets/images/profile4.png";
 import p6 from "../../assets/images/profile6.png";
-import qs from "qs";
 
 const HomeLogo = styled.div`
   background-image: url(${home});
@@ -20,7 +19,7 @@ const HomeLogo = styled.div`
   width: 40px;
   height: 40px;
   object-fit: cover;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   margin-top: 30px;
 `;
 
@@ -28,10 +27,10 @@ const Wrapper = styled.div`
   display: flex;
   height: 100vh;
   width: 100vw;
-  `;
+`;
 
 const LeftNavBar = styled.div`
-  background: #7AE2F2;
+  background: #7ae2f2;
   height: 100vh;
   width: 70px;
   display: flex;
@@ -77,7 +76,7 @@ const ChatContent = styled.div`
 
 const Text = styled.div`
   display: flex;
-  width: 100%;
+  width: 60%;
   height: 60%;
   flex-direction: column;
   margin-left: 10px;
@@ -93,21 +92,21 @@ const ChatInput = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position:relative;
+  position: relative;
   bottom: 15px;
 `;
 
 const Input = styled.input`
   background: white;
   width: 90%;
-  height:45px;
+  height: 45px;
   padding: 10px;
   margin-left: 30px;
   margin-bottom: 50px;
   padding-left: 25px;
   fonts-size: 20px;
   border: none;
-  &:focus{
+  &:focus {
     border: none;
   }
 `;
@@ -135,19 +134,43 @@ const Context = styled.div`
 const Space = styled.div`
   width: 10px;
   height: 10px;
-
 `;
 
 const User = styled.img`
- width: 25px;
- height: 25px;
+  width: 25px;
+  height: 25px;
 `;
 
 const UserCnt = styled.span`
-display: flex;
-align-items: center;
-  font-size:20px;
-  font-weight:900;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 900;
+`;
+
+const ChatSettings = styled(Link)`
+  background: #b6f4ff;
+  width: 200px;
+  height: 80px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 900;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+`;
+
+const SettingLogo = styled.div`
+  background-image: url(${setting});
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  margin: 0 20px 0 10px;
 `;
 
 function Chat(props) {
@@ -157,18 +180,27 @@ function Chat(props) {
     <Background>
       <Wrapper>
         <LeftNavBar>
-          <Link to="/"><HomeLogo/></Link>
+          <Link to="/">
+            <HomeLogo />
+          </Link>
         </LeftNavBar>
-        
+
         <Chatting>
           <RoomInfo>
-            <ChatLogo/>
+            <ChatLogo />
             <Text>
               <RoomTitle>그냥 노는 방</RoomTitle>
-               <UserCnt> <User src={user}></User>3</UserCnt>
-                {/* <UserCnt> <User src={user}></User>{props.userCnt}}</UserCnt>              이게 적용할거 */}
-                <RoomSubTitle>응애 놀자</RoomSubTitle>
+              <UserCnt>
+                {" "}
+                <User src={user}></User>3
+              </UserCnt>
+              {/* <UserCnt> <User src={user}></User>{props.userCnt}}</UserCnt>              이게 적용할거 */}
+              <RoomSubTitle>응애 놀자</RoomSubTitle>
             </Text>
+            <ChatSettings to="/chatSettings">
+              <SettingLogo />
+              채팅방 설정
+            </ChatSettings>
           </RoomInfo>
 
           <ChatContent>
@@ -194,12 +226,18 @@ function Chat(props) {
           </ChatContent>
           <ChatInput>
             <Input placeholder="보낼 메세지를 적어주세요"></Input>
-            <JustImg height={"65px"} width={"75px"} onClick={props.sendMessage} image={sendImage} color={"white"}></JustImg>
+            <JustImg
+              height={"65px"}
+              width={"75px"}
+              onClick={props.sendMessage}
+              image={sendImage}
+              color={"white"}
+            ></JustImg>
             <Space></Space>
           </ChatInput>
         </Chatting>
         
-        <ChatInfoNav roomId={roomId}></ChatInfoNav>
+        <ChatInfoNav></ChatInfoNav>
       </Wrapper>
     </Background>
   );

@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import AddFriend from "./pages/AddFriend";
 import Login from "./pages/Login"
 import Settings from "./pages/Settings"
+import ChatSettings from "./pages/ChatSettings"
 import "./App.css";
 // import api from "./services/account/api";
 import mainApi from "./services/mainApi/api";
@@ -48,6 +49,7 @@ function App() {
           <Route path="/chat" element={<Chat></Chat>}></Route>
           <Route path="/addFriend" element={<AddFriend></AddFriend>}></Route>
           <Route path="/settings" element={<Settings></Settings>}></Route>
+          <Route path="/chatsettings" element={<ChatSettings></ChatSettings>}></Route>
         </Routes>
       </BrowserRouter>
     } else {
