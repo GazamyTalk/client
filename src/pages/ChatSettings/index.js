@@ -5,7 +5,7 @@ import home from "../../assets/images/home.png";
 import back from "../../assets/images/arrow-left.png"
 import FriendNavContainer from "../Home/FriendsBarContainer.js";
 import ProfileHandler from "./profileHandler.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import prof1 from "../../assets/images/profile1.png";
 import prof2 from "../../assets/images/profile2.png";
@@ -68,13 +68,15 @@ const Homeicon = styled(Link)`
   margin-left: 20px;
 `;
 
-const Backicon = styled(Link)`
+// const Backicon = styled(Link)`
+const Backicon = styled.div`
 background-image: url(${back});
 background-size: 40px 40px;
 background-repeat: no-repeat;
 width: 40px;
 height: 40px;
 z-index: 1;
+margin: 10px;
 margin-left: 20px;
 `;
 
@@ -143,6 +145,7 @@ const TextWrapper = styled.div`
 `;
 
 function AddFriend() {
+  const navigate = useNavigate();
   return (
     <Background>
       <Container>
@@ -150,12 +153,12 @@ function AddFriend() {
         <FormContainer>
           <FormWrapper>
             <BlueForm>
-              <Homeicon to="/"></Homeicon>
-              <Backicon to="/chat"></Backicon>
+              {/* <Homeicon to="/"></Homeicon> */}
+              <Backicon onClick={() => { navigate(-1) }}></Backicon>
             </BlueForm>
             <FormBackground>
               <TextWrapper>
-                <Text>프로필 사진 선택</Text>
+                <Text>채팅방 사진 선택</Text>
               </TextWrapper>
                 <ImageContainer>
                   <ProfileHandler image={prof1}></ProfileHandler>

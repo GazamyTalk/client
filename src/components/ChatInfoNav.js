@@ -100,58 +100,7 @@ export default function FriendsBar(props) {
         <FriendContainer>
           <FriendsWrapper>
             <Friends
-              friends={[
-                {
-                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "김뫄뫄",
-                  description: "testDesc",
-                },
-                {
-                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "김뫄뫄",
-                  description: "testDesc",
-                },
-                {
-                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "김뫄뫄",
-                  description: "testDesc",
-                },
-                {
-                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "김뫄뫄",
-                  description: "testDesc",
-                },
-                {
-                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "김뫄뫄",
-                  description: "testDesc",
-                },
-                {
-                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "김뫄뫄",
-                  description: "testDesc",
-                },
-                {
-                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "김뫄뫄",
-                  description: "testDesc",
-                },
-                {
-                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "김뫄뫄",
-                  description: "testDesc",
-                },
-                {
-                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "김뫄뫄돈갚아",
-                  description: "testDesc2",
-                },
-                {
-                  userImage: "https://i.ibb.co/yWvqky7/tmp2.jpg",
-                  username: "^오^",
-                  description: "testDesc2",
-                },
-              ]}
+              friends={props.members}
               privateChat={false}
             ></Friends>
           </FriendsWrapper>

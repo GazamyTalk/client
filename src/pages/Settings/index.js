@@ -68,6 +68,7 @@ const Homeicon = styled(Link)`
   width: 40px;
   height: 40px;
   z-index: 1;
+  margin: 10px;
   margin-left: 20px;
 `;
 

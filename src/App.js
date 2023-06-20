@@ -47,9 +47,9 @@ function App() {
           <Route path="/" element={<HomePage></HomePage>}></Route>
           <Route path="/loading" element={<LoadingPage></LoadingPage>}></Route>
           <Route path="/chat" element={<Chat></Chat>}></Route>
+          <Route path="/chat/settings" element={<ChatSettings></ChatSettings>}></Route>
           <Route path="/addFriend" element={<AddFriend></AddFriend>}></Route>
           <Route path="/settings" element={<Settings></Settings>}></Route>
-          <Route path="/chatsettings" element={<ChatSettings></ChatSettings>}></Route>
         </Routes>
       </BrowserRouter>
     } else {

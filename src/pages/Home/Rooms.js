@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import RoomForm from "./RoomForm";
+import { useNavigate } from "react-router-dom";
 
 const RoomsNav = styled.nav`
     margin-top: 10px;
@@ -7,6 +8,7 @@ const RoomsNav = styled.nav`
 `
 
 export default function Rooms(props) {
+    const navigate = useNavigate();
     return (
         <RoomsNav>
             {
@@ -18,6 +20,9 @@ export default function Rooms(props) {
                         memberNum={room.users.length}
                         height={'70px'}
                         key={room.roomid}
+                        onClick={() => {
+                            navigate(`/chat?roomId=${room.roomid}`);
+                        }}
                     ></RoomForm>
                 )
             }

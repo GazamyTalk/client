@@ -6,7 +6,7 @@ const api = createApi({
         baseUrl: `${process.env.REACT_APP_API_SERVER_URL}/api`,
         credentials: 'include'
     }),
-    tagTypes: ["account", "friends", "members", "rooms"],
+    tagTypes: ["account", "friends", "members", "rooms", "othersUserInfo"],
     endpoints: (builder) => ({
 
         getAccount: builder.query({
@@ -55,7 +55,7 @@ const api = createApi({
             query: ({ roomid }) => {
                 return {
                     url: `my/members`,
-                    query: { roomid }
+                    params: { roomid }
                 }
             },
             providesTags: (result, error, { roomid }) => {
@@ -111,6 +111,17 @@ const api = createApi({
             },
             invalidatesTags: (result, error, arg) => [{ type: "rooms" }]
         }),
+
+        getOtherUserInfo: builder.query({
+            query: ({ username }) => ({
+                url: 'others/users',
+                method: 'GET',
+                params: { username }
+            }),
+            providesTags: (result, error, { username }) => {
+                return [{ type: "othersUserInfo", username }]
+            }
+        })
     }),
 });
 

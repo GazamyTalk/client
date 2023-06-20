@@ -16,7 +16,7 @@ const Friend = styled.div`
     transition: 0.3s;
     transform: translateX(10px);
     box-shadow: 0px 10px 20px 10px rgba(24, 24, 31, 0.2);
-    cursor: pointer;
+    // cursor: pointer;
   }
 `;
 
@@ -49,13 +49,18 @@ const FriendImg = styled.img`
 const Chatimg = styled.div`
     width: 40px;
     height: 40px;
-    margin-right: 15px;
+    // margin-right: 15px;
     background-image: url(${chat});
     background-size: 40px 40px;
+    background-position: center;
+    padding: 15px;
     background-repeat: no-repeat;
+      &:hover {
+      cursor: pointer;
+    }
 `;
 
-export default function FriendForm({ name, desc, img, height, privateChat }){
+export default function FriendForm({ name, desc, img, height, privateChat, onClickChat }){
   privateChat = privateChat ?? true
   return (
       <Friend height={height}>
@@ -64,7 +69,7 @@ export default function FriendForm({ name, desc, img, height, privateChat }){
           <FriendName>{name}</FriendName>
           <FriendDescription>{desc}</FriendDescription>
         </FriendDetail>
-        {privateChat ? <Chatimg></Chatimg> : <></>}
+        {privateChat ? <Chatimg onClick={onClickChat}></Chatimg> : <></>}
       </Friend>
 
   );
