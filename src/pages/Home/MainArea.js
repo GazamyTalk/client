@@ -3,6 +3,7 @@ import Rooms from "./Rooms";
 import UserProfile from "./UserProfile";
 import JustButton from "../../components/justButton.js";
 import {Link} from "react-router-dom";
+import room from "../../assets/images/addRoom.png";
 
 const MainAreaDiv = styled.div`
     flex: 1;
@@ -20,16 +21,16 @@ const WhiteBox = styled.div`
     position: relative;
     width: 900px;
     height: 800px;
-    background: #ffffff;
+    background: white;
     box-shadow: 0px 4px 10px rgba(78, 108, 124, 0.25);
     border-radius: 10px;
     overflow-y: scroll;
-    &::-webkit-scrollbar {
-        display:none;
-    }
     display: flex;
     flex-direction: column;
     align-items: center;
+    &::-webkit-scrollbar {
+        display:none;
+    }
 `;
 
 const MiniBox = styled.div`
@@ -65,15 +66,50 @@ const TEXT = styled.div`
     margin-left:40px;
 `;
 
+const BlueForm = styled.div`
+  display: flex;
+  background: #7ae2f2;
+  width: 100%;
+  height: 70px;
+  border-radius: 15px 15px 0px 0px;
+  align-items: center;
+`;
+
+const Homeicon = styled(Link)`
+  background-image: url(${room});
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  margin: 10px;
+  margin-left: 20px;
+`;
+
 const RemainingArea = styled.div`
     margin-bottom: 100px;
     margin-top: 50px;
+`;
+
+const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  height: 80vh;
+  align-item: center;
+  justify-content: center;
 `;
 
 export default function MainArea(props) {
     return (
         <MainAreaDiv>
             <OuterAreaDiv>
+                <FormWrapper>
+
+                
+            <BlueForm>
+              <Homeicon to="/"></Homeicon>
+            </BlueForm>
                 <WhiteBox>
                     <MiniBox>
                         {/* <TEXT>내 프로필</TEXT> */}
@@ -86,6 +122,7 @@ export default function MainArea(props) {
                         <Rooms rooms={props.rooms}></Rooms>
                     </RemainingArea>
                 </WhiteBox>
+                </FormWrapper>
             </OuterAreaDiv>
         </MainAreaDiv>
     );
