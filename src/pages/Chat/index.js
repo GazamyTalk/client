@@ -66,7 +66,7 @@ align-items: center;
 
 const ChatLogo = styled.div`
   background-size: 120px 120px;
-  background-image: url(${(props) => props.roomImage});
+  background-image: url(${(props) => props.src});
   background-repeat: no-repeat;
   width: 150px;
   height: 120px;
