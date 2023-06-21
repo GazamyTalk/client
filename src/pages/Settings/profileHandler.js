@@ -7,11 +7,13 @@ const ImageBox = styled.div`
     background-image: url(${(props) => props.image});
     background-size: 70px 70px;
     background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
     ${props => props.isSelect ? `
       border: green 3px solid;
     ` : `
       border: none;
-    `}
+      `}
     outline: none;
     margin: 10px;
 `;

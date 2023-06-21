@@ -4,6 +4,7 @@ import UserProfile from "./UserProfile";
 import JustButton from "../../components/justButton.js";
 import {Link} from "react-router-dom";
 import room from "../../assets/images/addRoom.png";
+import mainApi from "../../services/mainApi/api";
 
 const MainAreaDiv = styled.div`
     flex: 1;
@@ -75,15 +76,23 @@ const BlueForm = styled.div`
   align-items: center;
 `;
 
-const Homeicon = styled(Link)`
+const Homeicon = styled.div`
   background-image: url(${room});
-  background-size: 40px 40px;
+  background-size: 50px 50px;
   background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
+  background-position: bottom 5px right 0px;
+  width: 50px;
+  height: 50px;
   z-index: 1;
   margin: 10px;
   margin-left: 20px;
+//   margin-bottom: 20px;
+  &:hover {
+    // transition: 0.3s;
+    // transform: translateX(10px);
+    // box-shadow: 0px 10px 20px 10px rgba(24, 24, 31, 0.2);
+    cursor: pointer;
+  }
 `;
 
 const RemainingArea = styled.div`
@@ -101,6 +110,8 @@ const FormWrapper = styled.div`
 `;
 
 export default function MainArea(props) {
+    const [addRoom, addRoomQuery] = mainApi.useAddRoomMutation();
+
     return (
         <MainAreaDiv>
             <OuterAreaDiv>
@@ -108,7 +119,9 @@ export default function MainArea(props) {
 
                 
             <BlueForm>
-              <Homeicon to="/"></Homeicon>
+              <Homeicon onClick={() => {
+                addRoom();
+              }}></Homeicon>
             </BlueForm>
                 <WhiteBox>
                     <MiniBox>

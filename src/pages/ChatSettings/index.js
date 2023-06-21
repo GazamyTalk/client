@@ -148,6 +148,17 @@ const TextWrapper = styled.div`
   width: 470px;
 `;
 
+const imageUrlList = [
+  '/images/defaultRoomImage.png',
+  '/images/defaultRoomImage2.png',
+  '/images/defaultRoomImage3.png',
+  '/images/defaultRoomImage4.png',
+  '/images/defaultRoomImage5.png',
+  '/images/defaultRoomImage6.png',
+  '/images/defaultRoomImage7.png',
+  '/images/defaultRoomImage8.png',
+]
+
 function AddFriend() {
   const query = qs.parse(window.location.search, { ignoreQueryPrefix: true });
   const roomId = query.roomId;
@@ -156,12 +167,15 @@ function AddFriend() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+  console.log(imageUrl);
 
   
   useEffect(() => {
     const roomInfo = roomInfoQuery.data.roomInfos.find((value) => value.roomid === roomId);
     setName(roomInfo.roomname);
     setDesc(roomInfo.description);
+    setImageUrl(roomInfo.roomImage);
   }, [roomInfoQuery.isLoading]);
   
   if ( roomInfoQuery.isLoading ) return <></>
@@ -181,14 +195,21 @@ function AddFriend() {
                 <Text>채팅방 사진 선택</Text>
               </TextWrapper>
                 <ImageContainer>
-                  <ProfileHandler image={prof1}></ProfileHandler>
+                  {/* <ProfileHandler image={prof1}></ProfileHandler>
                   <ProfileHandler image={prof2}></ProfileHandler>
                   <ProfileHandler image={prof3}></ProfileHandler>
                   <ProfileHandler image={prof4}></ProfileHandler>
                   <ProfileHandler image={prof5}></ProfileHandler>
                   <ProfileHandler image={prof6}></ProfileHandler>
                   <ProfileHandler image={prof7}></ProfileHandler>
-                  <ProfileHandler image={prof8}></ProfileHandler>
+                  <ProfileHandler image={prof8}></ProfileHandler> */}
+                  {
+                    imageUrlList.map((value) => {
+                      return <ProfileHandler image={value} key={value} isSelect={imageUrl === value} onClick={() => {
+                        setImageUrl(value);
+                      }}></ProfileHandler>
+                    })
+                  }
                 </ImageContainer>
 
                 <InputForm>
@@ -208,7 +229,11 @@ function AddFriend() {
                     height={"50px"}
                     color={"#82E8FF"}
                     onClick={async () => {
-                      await editRoom({ roomid: roomId, patchData: { roomname: name, description: desc } }).unwrap();
+                      await editRoom({ roomid: roomId, patchData: { 
+                        roomname: name,
+                        description: desc,
+                        roomImage: imageUrl
+                      } }).unwrap();
                       navigate(-1);
                     }}
                   ></JustButton>

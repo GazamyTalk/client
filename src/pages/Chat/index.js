@@ -377,7 +377,7 @@ function Chat(props) {
           </ChatInput>
         </Chatting>
         
-        <ChatInfoNav members={members} disableBtn={disableBtn}></ChatInfoNav>
+        <ChatInfoNav members={members} disableBtn={disableBtn} roomId={roomId}></ChatInfoNav>
       </Wrapper>
     </Background>
   );

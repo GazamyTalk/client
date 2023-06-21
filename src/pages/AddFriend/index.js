@@ -145,7 +145,7 @@ function AddFriend() {
                     if ( addType === "friend" ) {
                       data = await addFriend({ username: name }).unwrap();
                     } else if ( addType === "member" ) {
-                      data = await addMembers({ usernames: name, roomid: roomId }).unwrap();
+                      data = await addMembers({ usernames: [name], roomid: roomId }).unwrap();
                     }
                     if ( data.success ) {
                       navigate(-1);

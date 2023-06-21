@@ -82,11 +82,11 @@ const api = createApi({
             }
         }),
         addRoom: builder.mutation({
-            query: ({ roomid }) => {
+            query: (args) => {
                 return {
-                url: `my/rooms`,
-                method: "POST",
-                body: roomid ? { roomid } : roomid
+                    url: `my/rooms`,
+                    method: "POST",
+                    body: args?.roomid ? { roomid: args.roomid } : {}
                 };
             },
             invalidatesTags: (result, error, arg) => [{ type: "rooms" }]
