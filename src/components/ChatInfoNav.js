@@ -107,7 +107,7 @@ export default function FriendsBar(props) {
         </FriendContainer>
       </UpperDiv>
       <LowerDiv>
-        <StyledLink to={`/addFriend?type=member&roomId=${props.roomId}`}>
+        { props.disableBtn ? (
           <BgColor>
             <AddButton
               desc={"대화상대 초대하기"}
@@ -117,9 +117,25 @@ export default function FriendsBar(props) {
               onClick={props.onAddFriend}
               image={addImage}
               color={"#b6f4ff"}
+              disable={true}
             ></AddButton>
           </BgColor>
-        </StyledLink>
+        ) : (
+          <StyledLink to={`/addFriend?type=member&roomId=${props.roomId}`}>
+            <BgColor>
+              <AddButton
+                desc={"대화상대 초대하기"}
+                font={"15px"}
+                width={"260px"}
+                height={"84px"}
+                onClick={props.onAddFriend}
+                image={addImage}
+                color={"#b6f4ff"}
+                disable={false}
+              ></AddButton>
+            </BgColor>
+          </StyledLink>
+        )}
       </LowerDiv>
     </FriendsBarArea>
   );

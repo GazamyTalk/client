@@ -20,6 +20,7 @@ import { useEffect } from "react";
 import io from "socket.io-client";
 import * as chatService from "../../services/chat/index.js";
 import MessageContainer from "./messageContinaer.js";
+import { useRef } from "react";
 
 const HomeLogo = styled.div`
   background-image: url(${home});
@@ -135,6 +136,7 @@ const RoomSubTitle = styled.div`
   font-size: 15px;
   font-weight: 900;
   margin-bottom: 20px;
+  margin-top: 10px;
 `;
 
 const Context = styled.div`
@@ -151,6 +153,8 @@ const Space = styled.div`
 const User = styled.img`
   width: 25px;
   height: 25px;
+  background-image: url(${(props) => props.src});
+  background-size: cover;
 `;
 
 const UserCnt = styled.span`
@@ -217,7 +221,10 @@ function Chat(props) {
   const [chat, setChat] = useState([]);
   const [socket, setSocket] = useState(undefined);
   const [inputChat, setInputChat] = useState('');
+  const bottomDivRef = useRef(null);
+  // const [isLoaded, setIsLoaded] = useState(false);
   console.log('chat:', chat);
+  // console.log('isLoaded:', isLoaded);
   // console.log('socket:', socket);
   
   useEffect(() => {
@@ -230,8 +237,12 @@ function Chat(props) {
   }, [])
 
   useEffect(() => {
-
+    console.log('div:', bottomDivRef.current);
+    if ( bottomDivRef.current !== null ) {
+      bottomDivRef.current.scrollIntoView();
+    }
   }, [chat]);
+  // }, [chat, isLoaded]);
 
   useEffect(() => {
     // console.log("start useEffect 2");
@@ -262,11 +273,22 @@ function Chat(props) {
   if ( socket === undefined || 
        roomInfoQuery.isLoading ||
        membersQuery.isLoading || 
-       accountQuery.isLoading ) return <></>
+       accountQuery.isLoading )
+  {
+    return <></>
+  } else {
+    // if ( isLoaded === false ) {
+    //   setIsLoaded(true);
+    // }
+  }
 
   const username = accountQuery.data.userInfo.username;
   const roomInfo = roomInfoQuery.data.roomInfos.find((value) => value.roomid === roomId);
   const members = membersQuery.data.otherUserInfos;
+
+  const disableBtn = roomInfo.isOnly2;
+  console.log('disableBtn:', disableBtn);
+
   // console.log(roomInfo);
   // console.log(roomInfoQuery.data);
 
@@ -287,7 +309,7 @@ function Chat(props) {
           <RoomInfo>
             <ChatLogo src={roomInfo.roomImage} />
             <Text>
-              <RoomTitle>{roomInfo.roomname}</RoomTitle>
+              <RoomTitle>{roomInfo.roomname} {roomInfo.isOnly2 ? "(1:1)" : ""}</RoomTitle>
               <UserCnt>
                 {" "}
                 <User src={user}></User>{roomInfo.users.length}
@@ -329,6 +351,7 @@ function Chat(props) {
                   ></MessageContainer>
                 ))
               }
+              <div ref={bottomDivRef}></div>
             </Context>
           </ChatContent>
           <ChatInput>
@@ -354,7 +377,7 @@ function Chat(props) {
           </ChatInput>
         </Chatting>
         
-        <ChatInfoNav members={members}></ChatInfoNav>
+        <ChatInfoNav members={members} disableBtn={disableBtn}></ChatInfoNav>
       </Wrapper>
     </Background>
   );

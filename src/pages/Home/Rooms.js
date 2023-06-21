@@ -23,6 +23,7 @@ export default function Rooms(props) {
                         onClick={() => {
                             navigate(`/chat?roomId=${room.roomid}`);
                         }}
+                        only2={room.isOnly2}
                     ></RoomForm>
                 )
             }

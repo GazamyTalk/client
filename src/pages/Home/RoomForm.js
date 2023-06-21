@@ -66,12 +66,12 @@ const MemberNumImg = styled.img`
 `;
 
 
-export default function RoomForm({ name, desc, img, height, memberNum, onClick }){
+export default function RoomForm({ name, desc, img, height, memberNum, onClick, only2 }){
     return (
       <Room height={height} onClick={onClick}>
         <RoomImg src={img}></RoomImg>
         <RoomDetail>
-          <RoomName>{name}</RoomName>
+          <RoomName>{name} {only2 ? "(1:1)" : ""}</RoomName>
           <RoomDescription>{desc}</RoomDescription>
         </RoomDetail>
         <RoomMemberNumArea>

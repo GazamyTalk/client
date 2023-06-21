@@ -136,17 +136,30 @@ const TextWrapper = styled.div`
   width: 470px;
 `;
 
+const imageUrlList = [
+  '/images/defaultUserImage.png',
+  '/images/defaultUserImage2.png',
+  '/images/defaultUserImage3.png',
+  '/images/defaultUserImage4.png',
+  '/images/defaultUserImage5.png',
+  '/images/defaultUserImage6.png',
+  '/images/defaultUserImage7.png',
+  '/images/defaultUserImage8.png',
+]
+
 function AddFriend() {
   const query = mainApi.useGetAccountQuery();
   const [editAccount, editAccountQuery] = mainApi.useEditAccountMutation();
   const [nick, setNick] = useState('');
   const [desc, setDesc] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     if ( !query.isLoading && query.data?.success ) {
       setNick(query.data.userInfo.nickname);
       setDesc(query.data.userInfo.description);
+      setImageUrl(query.data.userInfo.userImage);
     }
   }, [query.isLoading]);
 
@@ -163,15 +176,24 @@ function AddFriend() {
               <TextWrapper>
                 <Text>프로필 사진 선택</Text>
               </TextWrapper>
-                <ImageContainer>
-                  <ProfileHandler image={prof1}></ProfileHandler>
+                <ImageContainer onClick={(e) => {
+                  // e.target.
+                }}>
+                  {/* <ProfileHandler image={prof1} isSelect={}></ProfileHandler>
                   <ProfileHandler image={prof2}></ProfileHandler>
                   <ProfileHandler image={prof3}></ProfileHandler>
                   <ProfileHandler image={prof4}></ProfileHandler>
                   <ProfileHandler image={prof5}></ProfileHandler>
                   <ProfileHandler image={prof6}></ProfileHandler>
                   <ProfileHandler image={prof7}></ProfileHandler>
-                  <ProfileHandler image={prof8}></ProfileHandler>
+                  <ProfileHandler image={prof8}></ProfileHandler> */}
+                  {
+                    imageUrlList.map((value) => {
+                      return <ProfileHandler image={value} key={value} isSelect={imageUrl === value} onClick={() => {
+                        setImageUrl(value);
+                      }}></ProfileHandler>
+                    })
+                  }
                 </ImageContainer>
 
                 <InputForm>
@@ -195,7 +217,8 @@ function AddFriend() {
                         { 
                           patchData: {
                             nickname: nick,
-                            description: desc
+                            description: desc,
+                            userImage: imageUrl
                           }
                         }
                       ).unwrap();

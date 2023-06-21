@@ -12,13 +12,15 @@ const AddButtonArea = styled.div`
   background: ${props => props.color};
   border-radius: 10px;
   
-  &:hover {
-    transition: 0.3s;
-    background: rgb(238, 252, 255);
-    transform: translateY(-5px);
-    box-shadow: 0px 0px 20px 1px rgba(61, 61, 75, 0.2);
-    cursor: pointer;
-  }
+  ${props => (props.disable ? `opacity: 0.5;` : `
+    &:hover {
+      transition: 0.3s;
+      background: rgb(238, 252, 255);
+      transform: translateY(-5px);
+      box-shadow: 0px 0px 20px 1px rgba(61, 61, 75, 0.2);
+      cursor: pointer;
+    }
+  `)}
 `;
 
 const StyledAddImg = styled.img`
@@ -43,7 +45,7 @@ const Description = styled.div`
 
 export default function AddButton(props) {
   return (
-    <AddButtonArea height={props.height} width={props.width} onClick={props.onClick} color={props.color}>
+    <AddButtonArea height={props.height} width={props.width} onClick={props.onClick} color={props.color} disable={props.disable}>
       <StyledAddImg src={props.image}></StyledAddImg>
       <Description font={props.font}>{props.desc}</Description>
     </AddButtonArea>

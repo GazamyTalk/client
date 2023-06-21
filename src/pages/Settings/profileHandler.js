@@ -7,13 +7,17 @@ const ImageBox = styled.div`
     background-image: url(${(props) => props.image});
     background-size: 70px 70px;
     background-repeat: no-repeat;
-    border: none;
+    ${props => props.isSelect ? `
+      border: green 3px solid;
+    ` : `
+      border: none;
+    `}
     outline: none;
     margin: 10px;
 `;
 
 export default function ProfileHandler(props) {
   return (
-    <ImageBox image={props.image}></ImageBox>
+    <ImageBox image={props.image} isSelect={props.isSelect} onClick={props.onClick}></ImageBox>
   );
 }

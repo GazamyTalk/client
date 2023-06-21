@@ -15,6 +15,10 @@ import prof5 from "../../assets/images/profile5.png";
 import prof6 from "../../assets/images/profile6.png";
 import prof7 from "../../assets/images/profile.png";
 import prof8 from "../../assets/images/profile7.png";
+import qs from "qs";
+import api from "../../services/mainApi/api.js";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -145,7 +149,23 @@ const TextWrapper = styled.div`
 `;
 
 function AddFriend() {
+  const query = qs.parse(window.location.search, { ignoreQueryPrefix: true });
+  const roomId = query.roomId;
+  const roomInfoQuery = api.useGetRoomsQuery();
+  const [editRoom, editRoomQuery] = api.useEditRoomMutation();
   const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [desc, setDesc] = useState('');
+
+  
+  useEffect(() => {
+    const roomInfo = roomInfoQuery.data.roomInfos.find((value) => value.roomid === roomId);
+    setName(roomInfo.roomname);
+    setDesc(roomInfo.description);
+  }, [roomInfoQuery.isLoading]);
+  
+  if ( roomInfoQuery.isLoading ) return <></>
+
   return (
     <Background>
       <Container>
@@ -173,9 +193,13 @@ function AddFriend() {
 
                 <InputForm>
                   <BlockText>채팅방 이름</BlockText>
-                  <Input placeholder="새 채팅방 이름을 입력하세요 (0/20)"></Input>
+                  <Input placeholder="새 채팅방 이름을 입력하세요 (0/20)" value={name} onChange={(e) => {
+                    setName(e.target.value);
+                  }}></Input>
                   <BlockText>채팅방 상태메세지</BlockText>
-                  <Input placeholder="새 채팅방 상태메세지를 입력하세요 (0/60)"></Input>
+                  <Input placeholder="새 채팅방 상태메세지를 입력하세요 (0/60)" value={desc} onChange={(e) => {
+                    setDesc(e.target.value);
+                  }}></Input>
                 </InputForm>
                 <ButtonContainer>
                   <JustButton
@@ -183,6 +207,10 @@ function AddFriend() {
                     width={"150px"}
                     height={"50px"}
                     color={"#82E8FF"}
+                    onClick={async () => {
+                      await editRoom({ roomid: roomId, patchData: { roomname: name, description: desc } }).unwrap();
+                      navigate(-1);
+                    }}
                   ></JustButton>
                 </ButtonContainer>
 
